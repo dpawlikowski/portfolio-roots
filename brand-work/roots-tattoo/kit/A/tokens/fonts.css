@@ -1,0 +1,10 @@
+:root {
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-display-weight: 800;
+  --font-display-tracking: 0.010em;
+  --font-display-variation: "opsz" 96, "wdth" 100;
+  --font-text: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-text-weight: 400;
+  --font-text-tracking: 0.000em;
+  --font-text-variation: "opsz" 14, "wdth" 100;
+}

@@ -1,0 +1,373 @@
+{
+  "schema": "brand-identity/identity@1",
+  "brand": {
+    "name": "Roots Tattoo",
+    "tagline": "Jedne korzenie. Dwa światy.",
+    "languages": [
+      "pl"
+    ],
+    "doc_lang": "pl",
+    "sector": "studio tatuażu, Łódź",
+    "numbers": false,
+    "copy": {
+      "sentence": {
+        "pl": "Styx tatuuje w czerni i szarości, Wkrenta w pełnym kolorze. Zażółć gęślą jaźń."
+      },
+      "nav": [
+        "Styx",
+        "Wkrenta",
+        "Opinie",
+        "Kontakt"
+      ],
+      "cta": "Umów się"
+    }
+  },
+  "set": {
+    "id": "B",
+    "name": "Linia igły",
+    "recommended": false,
+    "mechanism": "Jedna linia igły: włosowe cięcie przez szeryfowy logotyp, ta sama linia jako jedyny element graficzny i jeden czerwony punkt tam, gdzie igła wchodzi w skórę.",
+    "expression_move": "Włosowe cięcie przez litery; nic poza nim się nie wyróżnia.",
+    "differs_by": "Jedyny kierunek szeryfowy i cichy na tle wąskich grotesków konkurencji; bez pomarańczu i złota, tylko kość na czerni."
+  },
+  "axes": {
+    "quiet_loud": -2,
+    "playful_serious": 2,
+    "premium_accessible": -2,
+    "classic_contemporary": -1
+  },
+  "components": {
+    "logo": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "type": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "palette": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    }
+  },
+  "type": {
+    "pairing_mode": "contrast",
+    "display": {
+      "family": "Instrument Serif",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400
+      ],
+      "location": {},
+      "features": [],
+      "case": "as-is",
+      "tracking": -10,
+      "fallback": "Georgia, serif",
+      "file": null
+    },
+    "text": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ],
+      "location": {
+        "opsz": 14,
+        "wdth": 100,
+        "wght": 400
+      },
+      "features": [],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "mono": null
+  },
+  "logo": {
+    "type": "wordmark",
+    "concept": "Nazwa przecięta jedną linią igły; czerwony punkt w miejscu wkłucia.",
+    "symbol": null,
+    "wordmark": {
+      "text": "Roots",
+      "role": "display",
+      "location": null,
+      "tracking": -10,
+      "case": "as-is"
+    },
+    "monogram": null,
+    "lockups": [
+      "horizontal"
+    ],
+    "colors": {
+      "wordmark": "brand-2",
+      "initial": "brand-2",
+      "point": "brand-4"
+    },
+    "tags": [],
+    "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+    },
+    "min_size": {
+      "px": 32,
+      "mm": 10
+    },
+    "defect": "Cięcie igły było niewidoczne (3,4 jednostki); pogrubione do 5 i dodany czerwony punkt wkłucia."
+  },
+  "palette": "palette.json",
+  "defaults_used": [
+    {
+      "id": "cream-ground",
+      "why": "Jasne tło to kość z czaszek w realizmie Styxa (#EFEAE3), ten sam kolor co tekst na czerni; bez terakoty i złota z kliszy."
+    }
+  ],
+  "rationale": [
+    {
+      "claim": "Instrument Serif nie występuje na liście domyślnych wyborów AI; to kontrast wobec wąskich grotesków konkurencji.",
+      "evidence": "judgement",
+      "source": "design"
+    }
+  ],
+  "derived": [
+    {
+      "file": "card.png",
+      "requires": [
+        "logo",
+        "type",
+        "palette"
+      ],
+      "inputs_sha256": "11036ac2251c7dede7f65c657bd7aacd38f59d92a42ebd9296f32186a308f504"
+    }
+  ],
+  "audit": {
+    "schema": "brand-identity/audit@1",
+    "passed": true,
+    "counts": {
+      "gate": 0,
+      "warn": 4,
+      "info": 11
+    },
+    "findings": [
+      {
+        "id": "palette.contrast.light.link-on-text",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 2.52,
+        "threshold": 3.0,
+        "message": "light: link #5e5b56 on text #1c1c1c is 2.52:1, below 3.0:1 (links distinguishable from body text without underline (WCAG G183); WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.link",
+          "from": "#5e5b56",
+          "to": "#74706b",
+          "how": "use primary-700 (same scale)",
+          "ratio_after": 3.47
+        },
+        "roles": [
+          "light.link",
+          "light.text"
+        ]
+      },
+      {
+        "id": "palette.contrast.light.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.37,
+        "threshold": 3.0,
+        "message": "light: border #d1c9be on background #efeae3 is 1.37:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.border",
+          "from": "#d1c9be",
+          "to": "#8c857b",
+          "how": "darken by OKLCH L -0.22, same hue",
+          "ratio_after": 3.05
+        },
+        "roles": [
+          "light.border",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.contrast.dark.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.91,
+        "threshold": 3.0,
+        "message": "dark: border #414141 on background #0e0c0b is 1.91:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.dark.border",
+          "from": "#414141",
+          "to": "#737373",
+          "how": "use neutral-500 (same scale)",
+          "ratio_after": 4.12
+        },
+        "roles": [
+          "dark.border",
+          "dark.background"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-4",
+        "component": "palette",
+        "severity": "info",
+        "measured": 0.96,
+        "threshold": 0.9,
+        "message": "#c1121f sits at the sRGB gamut edge (96% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-4"
+        ]
+      },
+      {
+        "id": "palette.harmony.primary-accent",
+        "component": "palette",
+        "severity": "info",
+        "measured": -0.88,
+        "threshold": -0.3,
+        "message": "Ou-Luo two-colour model scores #74706b + #c1121f at -0.88 (negative = less harmonious on a grey CRT test, no context): model signal only; the pairing table in references/pairing.md takes precedence",
+        "suggested_fix": null,
+        "roles": [
+          "light.primary",
+          "light.accent"
+        ]
+      },
+      {
+        "id": "type.display.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 18,
+        "threshold": null,
+        "message": "Instrument Serif: ~18 KB WOFF2 for the brief's characters (per weight file; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "type.text.confusables",
+        "component": "type",
+        "severity": "warn",
+        "measured": 0.916,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Bricolage Grotesque: I/l look alike at small sizes (IoU 0.92 at 48 px)",
+        "suggested_fix": "no ss/cv alternates; choose another face for small text and data"
+      },
+      {
+        "id": "type.text.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 130,
+        "threshold": null,
+        "message": "Bricolage Grotesque: ~130 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": null,
+        "message": "full-color: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": null,
+        "message": "on-light-background: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": null,
+        "message": "favicon-16: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": null,
+        "message": "favicon-32: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.light-swap",
+        "component": "logo",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": null,
+        "message": "favicon-48: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "logo.small-size",
+        "component": "logo",
+        "severity": "warn",
+        "measured": {
+          "stroke_px2": 1.92,
+          "gap_px2": 0.7
+        },
+        "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+        "message": "symbol-small at 16 px: features narrower than 1 px (lost 1.92 px², clogged 0.7 px²)",
+        "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+      },
+      {
+        "id": "cohesion.sets-close",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": [
+          "A–C"
+        ],
+        "threshold": "2 axes, 2 steps",
+        "message": "sets too alike on the axes: A–C differ by 2+ steps on fewer than 2 axes (heuristic)",
+        "suggested_fix": null
+      }
+    ],
+    "defaults": {
+      "matched": [
+        "cream-ground"
+      ]
+    }
+  },
+  "card": {
+    "ground": "dark"
+  },
+  "palette_build": {
+    "strategy": null,
+    "accent": "#C1121F",
+    "light_bg": "#EFEAE3",
+    "dark_bg": "#0E0C0B",
+    "neutral_tint": null,
+    "neutral_chroma": null,
+    "extra": []
+  }
+}

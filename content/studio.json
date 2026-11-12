@@ -1,0 +1,105 @@
+{
+  "_source": "Verified 2026-11-12 on the public Google Business profile, Facebook pages and Instagram. Values in [brackets] are unknown and block the production build.",
+  "isPlaceholder": false,
+  "name": "Roots Tattoo",
+  "legalName": "[NAZWA FIRMY]",
+  "nip": "[NIP]",
+  "city": "Łódź",
+  "cityLocative": "Łodzi",
+  "address": {
+    "street": "ul. Organizacji „Wolność i Niezawisłość” 45",
+    "postalCode": "91-825",
+    "locality": "Łódź",
+    "country": "PL"
+  },
+  "geo": {
+    "isPlaceholder": false,
+    "lat": 51.7881996,
+    "lon": 19.4635125
+  },
+  "hours": [
+    {
+      "label": "pon.–pt.",
+      "time": "10–17",
+      "schemaDays": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "10:00",
+      "closes": "17:00"
+    },
+    {
+      "label": "sob.",
+      "time": "10–15",
+      "schemaDays": [
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "15:00"
+    },
+    {
+      "label": "niedz.",
+      "time": "zamknięte",
+      "schemaDays": [],
+      "opens": null,
+      "closes": null
+    }
+  ],
+  "phone": "+48 539 526 083",
+  "email": "[EMAIL STUDIA]",
+  "social": {
+    "studio": {
+      "instagram": "rootstattoolodz",
+      "facebook": null
+    },
+    "styx": {
+      "instagram": null,
+      "facebook": "maciejstyx"
+    },
+    "wkrenta": {
+      "instagram": "wkrenta",
+      "facebook": "wkrenta"
+    }
+  },
+  "googleProfileUrl": "https://maps.google.com/?cid=5369398388002042712",
+  "site": {
+    "url": "https://example.com",
+    "locale": "pl_PL",
+    "themeColor": "#0E0C0B"
+  },
+  "booking": {
+    "isPlaceholder": true,
+    "formspreeId": "[FORMSPREE_ID]",
+    "responseTime": "[24 h]",
+    "agePolicy": "[Tatuujemy tylko osoby pełnoletnie.]"
+  },
+  "artists": {
+    "styx": {
+      "isPlaceholder": false,
+      "name": "Styx",
+      "genitive": "Styxa",
+      "styles": [
+        "realizm",
+        "black & grey",
+        "rękawy",
+        "dark art",
+        "portrety"
+      ]
+    },
+    "wkrenta": {
+      "isPlaceholder": false,
+      "name": "Wkrenta",
+      "genitive": "Wkrenty",
+      "styles": [
+        "kolorowy realizm",
+        "pop",
+        "kwiaty",
+        "zwierzęta",
+        "gotowe projekty"
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "display": {
+    "family": "Instrument Serif",
+    "file": "C:\\Users\\dpawl\\.cache\\brand-identity\\fonts\\google\\ofl\\instrumentserif\\InstrumentSerif-Regular.ttf",
+    "location": {
+      "wght": 400
+    },
+    "weights": [
+      400
+    ],
+    "features": []
+  },
+  "text": {
+    "family": "Bricolage Grotesque",
+    "file": "C:\\Users\\dpawl\\.cache\\brand-identity\\fonts\\instances\\BricolageGrotesque-d9186759b02c93b0.ttf",
+    "location": {
+      "opsz": 14,
+      "wdth": 100,
+      "wght": 400
+    },
+    "weights": [
+      400,
+      600
+    ],
+    "features": []
+  }
+}

@@ -1,0 +1,115 @@
+---
+import { studio, copy, fill, allProfiles, WORLDS, showPlaceholders } from '../lib/content';
+import '../styles/tokens.css';
+import '../styles/base.css';
+import serifUrl from '../assets/fonts/instrument-serif.woff2?url';
+import serifItalicUrl from '../assets/fonts/instrument-serif-italic.woff2?url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  noindex?: boolean;
+}
+const { title = fill(copy.seo.title), description = fill(copy.seo.description), noindex = false } = Astro.props;
+// Works on a custom domain (base "/") and on GitHub Pages under a project path.
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const root = new URL(base, Astro.site ?? studio.site.url).href;
+const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), root).href;
+const ogImage = `${root}og.png`;
+const site = root.replace(/\/$/, '');
+// Preview builds (placeholders allowed) must not compete in search with the studio's real domain.
+const robotsNoindex = noindex || showPlaceholders;
+
+// Google ratings are shown on the page with a link to the source, but not marked up as aggregateRating:
+// third-party reviews of your own business are not eligible for review markup (self-serving reviews).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'TattooParlor',
+      '@id': `${site}/#studio`,
+      name: studio.name,
+      url: `${site}/`,
+      image: ogImage,
+      logo: `${root}icon-512.png`,
+      telephone: studio.phone,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: studio.address.street,
+        postalCode: studio.address.postalCode,
+        addressLocality: studio.address.locality,
+        addressCountry: studio.address.country,
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: studio.geo.lat, longitude: studio.geo.lon },
+      hasMap: studio.googleProfileUrl,
+      openingHoursSpecification: studio.hours
+        .filter((h) => h.opens)
+        .map((h) => ({ '@type': 'OpeningHoursSpecification', dayOfWeek: h.schemaDays, opens: h.opens, closes: h.closes })),
+      sameAs: allProfiles('studio'),
+      employee: WORLDS.map((w) => ({ '@id': `${site}/#${w}` })),
+    },
+    ...WORLDS.map((key) => ({
+      '@type': 'Person',
+      '@id': `${site}/#${key}`,
+      name: studio.artists[key].name,
+      jobTitle: 'Tatuator',
+      knowsAbout: studio.artists[key].styles,
+      worksFor: { '@id': `${site}/#studio` },
+      sameAs: allProfiles(key),
+    })),
+  ],
+};
+---
+<!doctype html>
+<html lang="pl" data-world="styx">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {robotsNoindex && <meta name="robots" content="noindex" />}
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content={studio.site.themeColor} />
+    <meta name="color-scheme" content="dark" />
+    <!-- Both serif cuts are in the H1 (LCP): "Jedne korzenie." regular, "Dwa światy." italic. -->
+    <link rel="preload" href={serifUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={serifItalicUrl} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
+    <link rel="icon" href={`${base}favicon-48.png`} sizes="48x48" type="image/png" />
+    <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
+    <link rel="manifest" href={`${base}manifest.webmanifest`} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={studio.site.locale} />
+    <meta property="og:site_name" content={studio.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo Roots Tattoo: w literach O szare i różowe oko. Napis: Jedne korzenie. Dwa światy." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Preferences before first paint: no flash, no layout jump. -->
+    <script is:inline>
+      (function () {
+        var d = document.documentElement;
+        d.classList.add('js');
+        var stored = null;
+        try { stored = localStorage.getItem('motion'); } catch (e) {}
+        var reduce = stored ? stored === 'reduced' : matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var c = navigator.connection;
+        if ((c && c.saveData) || matchMedia('(prefers-reduced-data: reduce)').matches) d.classList.add('save-data');
+        d.classList.add(reduce ? 'reduce-motion' : 'fx');
+      })();
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd).replace(/</g, '\\u003c')} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

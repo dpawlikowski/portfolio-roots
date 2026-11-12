@@ -1,0 +1,170 @@
+{
+  "_tokens": "{{NAZWA}} {{MIASTO}} {{MIASTO_MSC}} {{STYX}} {{WKRENTA}} {{CZAS_ODPOWIEDZI}} {{WIEK}} are filled from content/studio.json at build time. Copy source: brand/STORY.md.",
+  "seo": {
+    "title": "Studio tatuażu {{MIASTO}} – {{NAZWA}}: realizm w czerni i w kolorze",
+    "description": "Małe studio tatuażu w {{MIASTO_MSC}}. {{STYX}}: realizm black & grey, portrety i całe rękawy. {{WKRENTA}}: kolorowe tatuaże i gotowe projekty. Ocena 5,0 w Google. Napisz i umów konsultację."
+  },
+  "nav": {
+    "skip": "Przejdź do treści",
+    "styx": "Styx",
+    "wkrenta": "Wkrenta",
+    "reviews": "Opinie",
+    "contact": "Kontakt",
+    "sound": "Dźwięk",
+    "motionReduce": "Ogranicz ruch"
+  },
+  "chapters": [
+    "Start",
+    "Styx",
+    "",
+    "Wkrenta",
+    "Opinie",
+    "Pytania",
+    "Kontakt"
+  ],
+  "hero": {
+    "label": "Studio tatuażu · {{MIASTO}}",
+    "h1": [
+      "Jedne korzenie.",
+      "Dwa światy."
+    ],
+    "lead": "Małe studio w {{MIASTO_MSC}}, dwoje tatuatorów. Styx robi realizm w czerni i szarości, Wkrenta kolorowe tatuaże. Piszesz bezpośrednio do osoby, która będzie cię tatuować.",
+    "pickStyx": "Prace Styxa",
+    "pickWkrenta": "Prace Wkrenty",
+    "scrollHint": "Przewiń, żeby zobaczyć prace.",
+    "proofLabel": "w Google"
+  },
+  "styx": {
+    "label": "Styx · czerń i szarość",
+    "h2": "Realizm w czerni i szarości.",
+    "text": "Styx, czyli Maciek. Tatuuje czaszki, portrety, postacie wyłaniające się z dymu i całe rękawy. Większe projekty rozkłada na kilka sesji. Robi też pierwsze tatuaże, a część klientów wraca do niego po kolejne.",
+    "outro": "Więcej jego prac jest na Facebooku.",
+    "cta": "Napisz do Styxa",
+    "social": "Styx na Facebooku"
+  },
+  "passage": [
+    "Tyle czerni.",
+    "Teraz kolor."
+  ],
+  "wkrenta": {
+    "label": "Wkrenta · kolor",
+    "h2": "Lubię robić dziary. Najlepiej kolorowe.",
+    "text": "Cześć! Robię kolorowy realizm i trochę popu: kwiaty, zwierzaki, portrety. Mam też gotowe projekty. Jeśli któryś ci się spodoba, może być twój.",
+    "outro": "Nowe projekty i zagojone prace wrzucam na Instagrama.",
+    "cta": "Napisz do Wkrenty",
+    "social": "@wkrenta na Instagramie"
+  },
+  "reviews": {
+    "label": "Opinie",
+    "h2": "Co mówią klienci",
+    "ratingLabel": "w Google",
+    "countLabel": "opinii",
+    "profileLink": "Wszystkie opinie w Google",
+    "sampleBadge": "przykład",
+    "empty": "Opinie o nas znajdziesz w Google."
+  },
+  "contact": {
+    "label": "Kontakt",
+    "h2": "Masz pomysł na tatuaż?",
+    "text": "Pisz do nas jak do dobrego ziomka, bez spiny. Nawet jeśli masz tylko zarys pomysłu, ogarniemy, o co ci chodzi. Napisz, co chcesz wytatuować, w którym miejscu i mniej więcej jak duże. Jeśli masz zdjęcie albo szkic, dołącz je. Odpiszemy w ciągu {{CZAS_ODPOWIEDZI}}.",
+    "address": "Adres",
+    "hours": "Godziny",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "mapButton": "Pokaż mapę",
+    "mapNote": "Mapa ładuje się z OpenStreetMap dopiero po kliknięciu.",
+    "mapLink": "Wyznacz trasę",
+    "socialHeading": "Instagram i Facebook"
+  },
+  "form": {
+    "heading": "Napisz do nas",
+    "name": "Imię",
+    "contact": "E-mail",
+    "contactHint": "Na ten adres odpiszemy.",
+    "artist": "Do kogo piszesz?",
+    "artistStyx": "{{STYX}} · czerń i szarość",
+    "artistWkrenta": "{{WKRENTA}} · kolor",
+    "artistUnsure": "Jeszcze nie wiem",
+    "idea": "Pomysł na tatuaż",
+    "ideaHint": "Kilka zdań wystarczy. Na przykład: „czaszka w dymie na przedramieniu”.",
+    "files": "Zdjęcia albo szkic",
+    "filesHint": "Do 3 plików (JPG, PNG, HEIC, WebP, PDF), każdy do 10 MB. Może to być inspiracja, szkic albo zdjęcie miejsca na ciele.",
+    "filesButton": "Dodaj pliki",
+    "filesRemove": "Usuń",
+    "filesTooMany": "Możesz dodać najwyżej 3 pliki.",
+    "filesTooBig": "Ten plik jest większy niż 10 MB:",
+    "filesWrongType": "Nieobsługiwany format pliku:",
+    "placement": "Miejsce na ciele",
+    "placementHint": "Na przykład przedramię, łydka, cały rękaw.",
+    "size": "Rozmiar",
+    "sizes": [
+      "do 5 cm",
+      "5–10 cm",
+      "10–20 cm",
+      "większy",
+      "cały rękaw",
+      "nie wiem"
+    ],
+    "age": "Mam ukończone 18 lat.",
+    "privacy": "Twoje dane i pliki wykorzystamy tylko po to, żeby odpowiedzieć na tę wiadomość.",
+    "submit": "Wyślij",
+    "sending": "Wysyłam…",
+    "success": "Dziękujemy! Wiadomość dotarła. Odpiszemy w ciągu {{CZAS_ODPOWIEDZI}}.",
+    "error": "Nie udało się wysłać. Spróbuj jeszcze raz albo napisz do nas na Instagramie.",
+    "invalid": "Uzupełnij zaznaczone pola.",
+    "demo": "Tryb przykładowy: formularz nie jest jeszcze podłączony, nic nie zostało wysłane.",
+    "required": "To pole jest wymagane.",
+    "emailInvalid": "Ten adres wygląda na niepełny. Sprawdź, czy ma @ i domenę.",
+    "ageRequired": "{{WIEK}}",
+    "requiredNote": "Pola oznaczone gwiazdką (*) są wymagane.",
+    "optional": "opcjonalnie",
+    "requiredMark": "wymagane",
+    "counter": "{n} z {max} znaków"
+  },
+  "sticky": "Umów się",
+  "footer": {
+    "line": "{{NAZWA}}, {{MIASTO}}.",
+    "egg": "Sekret",
+    "eggText": "Oboje do ciebie mrugnęli."
+  },
+  "lightbox": {
+    "close": "Zamknij",
+    "prev": "Poprzednia praca",
+    "next": "Następna praca",
+    "hint": "Przesuń w dół, żeby zamknąć"
+  },
+  "notFound": {
+    "title": "Tej strony tu nie ma.",
+    "back": "Wróć na stronę główną"
+  },
+  "faq": {
+    "label": "Zanim napiszesz",
+    "h2": "Najczęstsze pytania",
+    "items": [
+      {
+        "q": "Ile kosztuje tatuaż?",
+        "a": "To zależy od rozmiaru, miejsca na ciele i liczby sesji. Nie mamy cennika, bo każdy projekt zajmuje inny czas. Opisz pomysł, a podamy wycenę."
+      },
+      {
+        "q": "Czy robicie pierwsze tatuaże?",
+        "a": "Tak. Przed sesją wszystko wyjaśnimy: jak się przygotować, jak wygląda tatuowanie i jak dbać o tatuaż potem."
+      },
+      {
+        "q": "Nie wiem dokładnie, czego chcę.",
+        "a": "Nic nie szkodzi. Wystarczy, że pokażesz kilka inspiracji albo powiesz, gdzie chcesz mieć tatuaż. Resztę ustalimy na konsultacji."
+      },
+      {
+        "q": "Czy to boli?",
+        "a": "Trochę. Najbardziej w miejscach, gdzie skóra jest cienka albo blisko kości, na przykład na żebrach czy stopach. Większe projekty dzielimy na sesje."
+      },
+      {
+        "q": "Jak się przygotować do sesji?",
+        "a": "Wyśpij się, zjedz coś przed wizytą i dzień wcześniej nie pij alkoholu. Ubierz się tak, żeby łatwo odsłonić miejsce tatuażu."
+      },
+      {
+        "q": "Od jakiego wieku tatuujecie?",
+        "a": "{{WIEK}}"
+      }
+    ]
+  }
+}

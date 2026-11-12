@@ -1,0 +1,336 @@
+{
+  "schema": "brand-identity/identity@1",
+  "brand": {
+    "name": "Roots Tattoo",
+    "tagline": "Jedne korzenie. Dwa światy.",
+    "languages": [
+      "pl"
+    ],
+    "doc_lang": "pl",
+    "sector": "studio tatuażu, Łódź",
+    "numbers": false,
+    "copy": {
+      "sentence": {
+        "pl": "Styx tatuuje w czerni i szarości, Wkrenta w pełnym kolorze. Zażółć gęślą jaźń."
+      },
+      "nav": [
+        "Styx",
+        "Wkrenta",
+        "Opinie",
+        "Kontakt"
+      ],
+      "cta": "Umów się"
+    }
+  },
+  "set": {
+    "id": "A",
+    "name": "Dwa spojrzenia",
+    "recommended": true,
+    "mechanism": "Podwójne O w nazwie patrzy na ciebie: lewe oko szare i realistyczne (Styx), prawe neonowe z kocią źrenicą (Wkrenta); z obu cieknie tusz, krew i guma balonowa.",
+    "expression_move": "Oczy w literach O są jedynym głośnym elementem; krój i paleta poza nimi milczą.",
+    "differs_by": "Łódzka konkurencja (Sigil, He3tatuażyk) gra wąskim, grubym groteskiem i pomarańczem lub złotem; tu szeroka groteska, szarość i jeden neonowy róż."
+  },
+  "axes": {
+    "quiet_loud": 1,
+    "playful_serious": 0,
+    "premium_accessible": 0,
+    "classic_contemporary": 1
+  },
+  "components": {
+    "logo": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "type": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "palette": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    }
+  },
+  "type": {
+    "pairing_mode": "single-family",
+    "display": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        800
+      ],
+      "location": {
+        "opsz": 96,
+        "wdth": 100,
+        "wght": 800
+      },
+      "features": [],
+      "case": "upper",
+      "tracking": 10,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "text": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ],
+      "location": {
+        "opsz": 14,
+        "wdth": 100,
+        "wght": 400
+      },
+      "features": [],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "mono": null
+  },
+  "logo": {
+    "type": "wordmark",
+    "concept": "ROOTS patrzy: szare oko realizmu i neonowe kocie oko popu; oboje tatuują oczy i portrety.",
+    "symbol": null,
+    "wordmark": {
+      "text": "ROOTS",
+      "role": "display",
+      "location": null,
+      "tracking": 10,
+      "case": "upper"
+    },
+    "monogram": null,
+    "lockups": [],
+    "colors": {
+      "o-styx": "brand-3",
+      "o-wkrenta": "brand-4",
+      "drip-styx": "brand-5",
+      "drip-wkrenta": "brand-4",
+      "wordmark": "text"
+    },
+    "tags": [
+      "letterform"
+    ],
+    "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+    },
+    "min_size": {
+      "px": 28,
+      "mm": 9
+    },
+    "misuse": [
+      {
+        "do": "stretch"
+      },
+      {
+        "do": "recolour"
+      },
+      {
+        "do": "effects"
+      },
+      {
+        "do": "crowd"
+      },
+      {
+        "svg": "logo/misuse-1.svg",
+        "label": "Nie zamieniaj oczu: szare zawsze po lewej, neonowe po prawej"
+      },
+      {
+        "svg": "logo/misuse-2.svg",
+        "label": "Nie zapełniaj źrenic: bez nich oczy znikają"
+      }
+    ],
+    "defect": "Krople czytały się jak wykrzykniki (cienki trzonek i oddzielna kulka); przerysowane na ciągłą łzę bez przewężenia."
+  },
+  "palette": "palette.json",
+  "defaults_used": [
+    {
+      "id": "logo-formula",
+      "why": "Oczy nie są przedmiotem z nazwy ani ukrytą literą: to temat obojga artystów (portrety, oczy, kocie oczy na ich profilach), a litery O dosłownie są w nazwie."
+    }
+  ],
+  "rationale": [
+    {
+      "claim": "Konkurenci odczytani skryptem: Sigil #ff3c10 + Francois One / Crimson Text, He3tatuażyk #d49a40 + Oswald / Lato.",
+      "evidence": "measured",
+      "source": "site competitors"
+    },
+    {
+      "claim": "Styx: realizm black & grey, dym, czaszki, czerwień jako jedyny kolor (okładka FB). Wkrenta: kolorowy realizm pop, neonowe róże, kot w różowych okularach, guma balonowa.",
+      "evidence": "measured",
+      "source": "Facebook / Instagram 2026-11-12"
+    },
+    {
+      "claim": "Szeroka Bricolage zamiast wąskiej: okrągłe O mieszczą tęczówkę w świetle litery i odróżniają od Oswald/Francois.",
+      "evidence": "judgement",
+      "source": "design"
+    }
+  ],
+  "derived": [
+    {
+      "file": "card.png",
+      "requires": [
+        "logo",
+        "type",
+        "palette"
+      ],
+      "inputs_sha256": "f598de8954b159dd213d4b834c93479ed57f0862851a332c3b81394d14b53cce"
+    }
+  ],
+  "audit": {
+    "schema": "brand-identity/audit@1",
+    "passed": true,
+    "counts": {
+      "gate": 0,
+      "warn": 5,
+      "info": 4
+    },
+    "findings": [
+      {
+        "id": "palette.contrast.light.link-on-text",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 2.56,
+        "threshold": 3.0,
+        "message": "light: link #b40963 on text #1c1c1c is 2.56:1, below 3.0:1 (links distinguishable from body text without underline (WCAG G183); WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.link",
+          "from": "#b40963",
+          "to": "#d80d79",
+          "how": "use accent-600 (same scale)",
+          "ratio_after": 3.45
+        },
+        "roles": [
+          "light.link",
+          "light.text"
+        ]
+      },
+      {
+        "id": "palette.contrast.light.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.37,
+        "threshold": 3.0,
+        "message": "light: border #d9d0ca on background #f7f2ee is 1.37:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.border",
+          "from": "#d9d0ca",
+          "to": "#948b86",
+          "how": "darken by OKLCH L -0.22, same hue",
+          "ratio_after": 3.0
+        },
+        "roles": [
+          "light.border",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.contrast.dark.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.91,
+        "threshold": 3.0,
+        "message": "dark: border #414141 on background #0e0c0b is 1.91:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.dark.border",
+          "from": "#414141",
+          "to": "#737373",
+          "how": "use neutral-500 (same scale)",
+          "ratio_after": 4.12
+        },
+        "roles": [
+          "dark.border",
+          "dark.background"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-4",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": 0.9,
+        "message": "#ff2e93 sits at the sRGB gamut edge (100% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-4"
+        ]
+      },
+      {
+        "id": "type.display+text.confusables",
+        "component": "type",
+        "severity": "warn",
+        "measured": 0.916,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Bricolage Grotesque: I/l look alike at small sizes (IoU 0.92 at 48 px)",
+        "suggested_fix": "no ss/cv alternates; choose another face for small text and data"
+      },
+      {
+        "id": "type.display+text.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 129,
+        "threshold": null,
+        "message": "Bricolage Grotesque: ~129 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "logo.small-size",
+        "component": "logo",
+        "severity": "warn",
+        "measured": {
+          "stroke_px2": 2.93,
+          "gap_px2": 1.01
+        },
+        "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+        "message": "symbol-small at 16 px: features narrower than 1 px (lost 2.93 px², clogged 1.01 px²)",
+        "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+      },
+      {
+        "id": "logo.colors",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 4,
+        "threshold": "<= 3 (heuristic, uncalibrated)",
+        "message": "4 colours in the logo",
+        "suggested_fix": "fewer colours or logo.colors_why"
+      },
+      {
+        "id": "cohesion.sets-close",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": [
+          "A–C"
+        ],
+        "threshold": "2 axes, 2 steps",
+        "message": "sets too alike on the axes: A–C differ by 2+ steps on fewer than 2 axes (heuristic)",
+        "suggested_fix": null
+      }
+    ],
+    "defaults": {
+      "matched": []
+    }
+  },
+  "card": {
+    "ground": "dark"
+  },
+  "palette_build": {
+    "strategy": null,
+    "accent": "#FF2E93",
+    "light_bg": "#F7F2EE",
+    "dark_bg": "#0E0C0B",
+    "neutral_tint": null,
+    "neutral_chroma": null,
+    "extra": []
+  }
+}

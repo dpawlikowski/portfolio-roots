@@ -1,0 +1,160 @@
+/* ---------- Chapters: a vertical scroll that travels right through the work ---------- */
+.act {
+  position: relative;
+  background: var(--bg);
+  color: var(--fg);
+  --card-w: min(76vw, calc((100svh - 290px) * 0.8));
+}
+@media (min-width: 768px) {
+  .act { --card-w: min(30vw, calc((100svh - 330px) * 0.8), 760px); }
+}
+.act__stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  padding: calc(var(--nav-h) + 16px) 0 clamp(96px, 12vh, 120px);
+  overflow: clip;
+}
+
+/* Default (no JS, reduced motion): native horizontal scroll with snap. */
+.act__track {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 3vw, 56px);
+  padding: 8px var(--gutter);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--fg-quiet) transparent;
+}
+/* Enhanced: the stage is pinned and the track is moved by the scroll engine. */
+html.fx-ready .act[data-pinned] .act__stage { height: 100svh; }
+html.fx-ready .act[data-pinned] .act__track { overflow: visible; scroll-snap-type: none; width: max-content; }
+
+.panel { flex: 0 0 auto; scroll-snap-align: start; }
+.panel--intro {
+  width: min(88vw, 34rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(14px, 2vh, 22px);
+}
+.act__name { line-height: 0.8; color: var(--accent-text); }
+.act__name--styx {
+  font: 400 clamp(4rem, 2rem + 9vw, 10rem)/0.8 var(--f-serif);
+  color: var(--bone);
+  letter-spacing: -0.02em;
+}
+.act__dot {
+  display: inline-block;
+  width: 0.14em; height: 0.14em;
+  margin-left: 0.05em;
+  border-radius: 50%;
+  background: var(--blood);
+}
+.act__name--wkrenta { width: clamp(220px, 30vw, 460px); height: auto; color: var(--pink); }
+.act__title {
+  font: 400 var(--t-h3)/1.08 var(--f-serif);
+  max-width: 18ch;
+}
+.act__text { max-width: 40ch; color: var(--fg-muted); font-size: var(--t-body); }
+.act__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.act__tags li {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font: 600 var(--t-label)/1.2 var(--f-sans);
+  letter-spacing: 0.06em;
+  color: var(--fg-muted);
+}
+.panel--outro {
+  width: min(78vw, 22rem);
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+.act__outro { font: 400 var(--t-h3)/1.1 var(--f-serif); font-style: italic; }
+
+/* Work cards */
+.work { flex: 0 0 var(--card-w); scroll-snap-align: center; }
+.work__link { display: block; color: inherit; text-decoration: none; border-radius: 6px; }
+.work__frame {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--lqip-color, var(--bg-2)) var(--lqip, none) center / cover;
+}
+.work__img, .work__frame picture { display: block; width: 100%; height: 100%; }
+.work__img { object-fit: cover; }
+html.fx-ready .work__img { transform: translate3d(var(--px, 0%), 0, 0) scale(1.16); }
+/* Scroll velocity leans the cards (max 6°, set by the engine on the track). */
+html.fx-ready .act[data-pinned] .work__frame { transform: skewX(calc(var(--skew, 0) * 1deg)); }
+.work__sheen { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity var(--dur-2) var(--ease-out); }
+.work--wkrenta .work__sheen {
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 30%), rgb(255 46 147 / 0.28), transparent 42%);
+  mix-blend-mode: screen;
+}
+@media (hover: hover) {
+  .work--wkrenta .work__link:hover .work__sheen { opacity: 1; }
+  .work__link:hover .work__img { filter: brightness(1.05); }
+}
+.work__caption {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  row-gap: 2px;
+  padding-top: 12px;
+}
+.work__num { grid-row: span 2; font: italic 400 1.5rem/1 var(--f-serif); color: var(--fg-quiet); }
+.work__title { font: 400 1.25rem/1.15 var(--f-serif); }
+.work__meta { font-size: var(--t-small); color: var(--fg-muted); }
+.work__caption .badge { grid-column: 2; justify-self: start; margin: 6px 0 0; }
+
+/* HUD: counter and the current title, visible only when pinned */
+.act__hud {
+  position: absolute;
+  right: var(--gutter);
+  top: calc(var(--nav-h) + 4px);
+  z-index: 2;
+  display: none;
+  align-items: baseline;
+  gap: 18px;
+  pointer-events: none;
+}
+html.fx-ready .act[data-pinned] .act__hud { display: flex; }
+.act__count { font: italic 400 clamp(1.75rem, 1rem + 2vw, 3rem)/1 var(--f-serif); }
+.act__current { font: 600 var(--t-small)/1.2 var(--f-sans); letter-spacing: 0.06em; color: var(--fg-muted); }
+@media (min-width: 900px) { .act__stage { padding-bottom: 56px; } }
+
+/* Styx: the lantern. Hidden eyes appear only inside the light. */
+.act__bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.act__glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle var(--lr, 0px) at var(--lx, 50%) var(--ly, 50%), rgb(239 234 227 / 0.09), transparent 70%);
+}
+.act__eyes {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  color: var(--ash);
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(circle var(--lr, 0px) at var(--lx, 50%) var(--ly, 50%), #000 0%, rgb(0 0 0 / 0.5) 45%, transparent 100%);
+  mask-image: radial-gradient(circle var(--lr, 0px) at var(--lx, 50%) var(--ly, 50%), #000 0%, rgb(0 0 0 / 0.5) 45%, transparent 100%);
+}
+html:not(.fx) .act__eyes { display: none; }
+.act__trail { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Glitch on the current title (Styx), three stepped frames */
+.act--styx .act__current.is-glitch { animation: glitch 0.24s steps(3) 1; }
+@keyframes glitch {
+  0% { text-shadow: -2px 0 var(--blood-text), 2px 0 rgb(239 234 227 / 0.5); transform: translateX(1px); }
+  50% { text-shadow: 2px 0 var(--blood-text), -2px 0 rgb(239 234 227 / 0.5); transform: translateX(-1px); }
+  100% { text-shadow: none; transform: none; }
+}

@@ -1,0 +1,34 @@
+---
+import { copy, fill, reviews } from '../lib/content';
+const lead = fill(copy.hero.lead);
+const label = fill(copy.hero.label);
+const rating = reviews.rating;
+const score = new Intl.NumberFormat('pl-PL', { minimumFractionDigits: 1 }).format(rating.value);
+const [l1, l2] = copy.hero.h1;
+---
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <!-- Styx's side: the accessible content (H1 is the LCP element). -->
+  <div class="hero__world hero__world--styx" data-theme="styx">
+    <p class="label hero__label">{label}</p>
+    <h1 class="hero__title" id="hero-title"><span class="hero__line">{l1}</span> <em class="hero__line">{l2}</em></h1>
+    <p class="hero__lead">{lead}</p>
+  </div>
+  <!-- Wkrenta's side: the same words in the other temperature, clipped by the seam. -->
+  <div class="hero__world hero__world--wkrenta" data-theme="wkrenta" aria-hidden="true">
+    <p class="label hero__label">{label}</p>
+    <p class="hero__title"><span class="hero__line">{l1}</span> <em class="hero__line">{l2}</em></p>
+    <p class="hero__lead">{lead}</p>
+  </div>
+  <div class="hero__seam" aria-hidden="true"></div>
+  <div class="hero__ui">
+    <a class="pick pick--styx" href="#styx" data-theme="styx"><span>{copy.hero.pickStyx}</span><span aria-hidden="true">↓</span></a>
+    <a class="pick pick--wkrenta" href="#wkrenta" data-theme="wkrenta"><span>{copy.hero.pickWkrenta}</span><span aria-hidden="true">↓</span></a>
+    {!rating.isPlaceholder && (
+      <a class="hero__proof" href={rating.source} rel="noopener" target="_blank">
+        <span class="hero__stars" aria-hidden="true">★★★★★</span>
+        <span>{score} {copy.hero.proofLabel} · {rating.count} opinii</span>
+      </a>
+    )}
+    <p class="hero__hint">{copy.hero.scrollHint}</p>
+  </div>
+</section>

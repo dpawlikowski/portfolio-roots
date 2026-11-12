@@ -1,0 +1,224 @@
+{
+  "schema": "brand-identity/competitors@1",
+  "measuredAt": "2026-11-12T14:15:14.363Z",
+  "note": "Measured hex values approximate public websites; roles are unconfirmed proposals.",
+  "sites": [
+    {
+      "url": "https://sigil.art.pl/",
+      "host": "sigil.art.pl",
+      "status": "ok",
+      "title": "SIGIL TATTOO STUDIO I SALON TATUAŻU ŁÓDŹ – PROFESJONALNY TATUAŻ",
+      "siteName": "SIGIL TATTOO STUDIO I SALON TATUAŻU ŁÓDŹ – PROFESJONALNY TATUAŻ",
+      "description": "Chcesz zrobić tatuaż, ale nie znalazłeś studia tatuażu idealnego dla siebie? Zadzwoń lub przyjdź do nas. Na pewno nie będziesz żałował.",
+      "lang": "pl-PL",
+      "themeColor": null,
+      "darkModeSupport": false,
+      "roles": {
+        "background": "#ffffe5",
+        "border": "#dddddd",
+        "text": "#333333",
+        "primary": "#ff3c10",
+        "link": "#ff3c10"
+      },
+      "confidence": {
+        "background": 0.97,
+        "border": 0.6,
+        "text": 0.86,
+        "primary": 0.15,
+        "link": 0.71
+      },
+      "notes": [],
+      "brandColors": [
+        "#ff3c10"
+      ],
+      "topColors": [
+        {
+          "hex": "#ffffe5",
+          "oklch": "oklch(99.3% 0.034 107)",
+          "score": 175.22,
+          "areaShare": 1,
+          "roles": [
+            "background"
+          ]
+        },
+        {
+          "hex": "#333333",
+          "oklch": "oklch(32.1% 0.000 90)",
+          "score": 23.45,
+          "areaShare": 0,
+          "roles": [
+            "text"
+          ]
+        },
+        {
+          "hex": "#ff3c10",
+          "oklch": "oklch(65.3% 0.235 33)",
+          "score": 13.83,
+          "areaShare": 0,
+          "roles": [
+            "link",
+            "primary"
+          ]
+        },
+        {
+          "hex": "#ffffff",
+          "oklch": "oklch(100.0% 0.000 90)",
+          "score": 9.96,
+          "areaShare": 0,
+          "roles": []
+        },
+        {
+          "hex": "#dddddd",
+          "oklch": "oklch(89.8% 0.000 90)",
+          "score": 5.67,
+          "areaShare": 0,
+          "roles": [
+            "border"
+          ]
+        }
+      ],
+      "nHues": 1,
+      "hues": [
+        33
+      ],
+      "lightnessRange": [
+        0.32,
+        1
+      ],
+      "strategy": "tokens",
+      "fonts": {
+        "heading": "\"Francois One\", sans-serif",
+        "body": "\"Crimson Text\", serif",
+        "paragraph": "\"Crimson Text\", serif",
+        "loaded": [
+          "Crimson Text 400 normal",
+          "Francois One 400 normal"
+        ]
+      },
+      "screenshot": "competitors/sigil-art-pl.png"
+    },
+    {
+      "url": "https://he3tatuazyk.pl/",
+      "host": "he3tatuazyk.pl",
+      "status": "ok",
+      "title": "Studio tatuażu Łódź - He3Tatuażyk",
+      "siteName": "Studio tatuażu Łódź",
+      "description": "He3Tatuażyk - Studio tatuażu Łódź. Wkrocz w świat doświadczonych artystów tworzących unikatowe wzory tatuaży. Poczuj się jak w domu. Loffki:)",
+      "lang": "pl-PL",
+      "themeColor": null,
+      "darkModeSupport": false,
+      "roles": {
+        "background": "#ffffff",
+        "surface": "#f5f5f5",
+        "border": "#000000",
+        "text": "#666666",
+        "primary": "#d49a40",
+        "onPrimary": "#151515",
+        "danger": "#cc1818"
+      },
+      "confidence": {
+        "background": 0.89,
+        "surface": 0.9,
+        "border": 0.93,
+        "text": 0.76,
+        "primary": 0.94,
+        "onPrimary": 0.97,
+        "danger": 0.35
+      },
+      "notes": [],
+      "brandColors": [
+        "#d49a40"
+      ],
+      "topColors": [
+        {
+          "hex": "#ffffff",
+          "oklch": "oklch(100.0% 0.000 90)",
+          "score": 772.35,
+          "areaShare": 0.9434,
+          "roles": [
+            "background"
+          ]
+        },
+        {
+          "hex": "#262626",
+          "oklch": "oklch(26.9% 0.000 90)",
+          "score": 84.05,
+          "areaShare": 0.1056,
+          "roles": []
+        },
+        {
+          "hex": "#f5f5f5",
+          "oklch": "oklch(97.0% 0.000 90)",
+          "score": 76.68,
+          "areaShare": 0.0963,
+          "roles": [
+            "surface"
+          ]
+        },
+        {
+          "hex": "#000000",
+          "oklch": "oklch(0.0% 0.000 0)",
+          "score": 76.18,
+          "areaShare": 0.0677,
+          "roles": [
+            "border"
+          ]
+        },
+        {
+          "hex": "#3e3e3e",
+          "oklch": "oklch(36.4% 0.000 90)",
+          "score": 45.31,
+          "areaShare": 0,
+          "roles": []
+        },
+        {
+          "hex": "#666666",
+          "oklch": "oklch(51.0% 0.000 90)",
+          "score": 41.63,
+          "areaShare": 0,
+          "roles": [
+            "text"
+          ]
+        },
+        {
+          "hex": "#202020",
+          "oklch": "oklch(24.4% 0.000 90)",
+          "score": 34.78,
+          "areaShare": 0,
+          "roles": []
+        },
+        {
+          "hex": "#d49a40",
+          "oklch": "oklch(72.6% 0.126 75)",
+          "score": 10.74,
+          "areaShare": 0.0095,
+          "roles": [
+            "primary"
+          ]
+        }
+      ],
+      "nHues": 1,
+      "hues": [
+        75
+      ],
+      "lightnessRange": [
+        0,
+        1
+      ],
+      "strategy": "tokens",
+      "fonts": {
+        "heading": "Oswald-bold",
+        "body": "Oswald-regular",
+        "paragraph": "Lato-regular",
+        "loaded": [
+          "Oswald-regular 400 normal",
+          "Oswald-bold 600 normal",
+          "Lato-regular 400 normal",
+          "Lato-bold 600 normal"
+        ]
+      },
+      "screenshot": "competitors/he3tatuazyk-pl.png"
+    }
+  ],
+  "errors": []
+}

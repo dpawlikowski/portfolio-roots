@@ -1,0 +1,76 @@
+{
+  "_note": "Only real reviews may ship: copy them from the Google profile with the author's consent, keep the author as shown publicly, set source to the review URL and isPlaceholder to false. The samples below only lay out the page; they show the badge 'przykład' in dev/preview and block the production build.",
+  "rating": {
+    "isPlaceholder": false,
+    "value": 5,
+    "count": 15,
+    "checked": "2026-11-12",
+    "source": "https://maps.google.com/?cid=5369398388002042712"
+  },
+  "items": [
+    {
+      "id": "r1",
+      "isPlaceholder": true,
+      "world": "styx",
+      "author": "Przykład A.",
+      "rating": 5,
+      "source": null,
+      "text": "Miejsce na prawdziwą opinię o pracy Styxa. Najlepiej taką, która mówi coś konkretnego o rękawie, sesjach albo atmosferze."
+    },
+    {
+      "id": "r2",
+      "isPlaceholder": true,
+      "world": "wkrenta",
+      "author": "Przykład B.",
+      "rating": 5,
+      "source": null,
+      "text": "Miejsce na prawdziwą opinię o kolorowej pracy Wkrenty. Krótka i ciepła, jak jej głos."
+    },
+    {
+      "id": "r3",
+      "isPlaceholder": true,
+      "world": "styx",
+      "author": "Przykład C.",
+      "rating": 5,
+      "source": null,
+      "text": "Miejsce na prawdziwą opinię o pierwszym tatuażu u Styxa."
+    },
+    {
+      "id": "r4",
+      "isPlaceholder": true,
+      "world": "wkrenta",
+      "author": "Przykład D.",
+      "rating": 5,
+      "source": null,
+      "text": "Miejsce na prawdziwą opinię o projekciku wziętym od Wkrenty."
+    },
+    {
+      "id": "r5",
+      "isPlaceholder": true,
+      "world": "styx",
+      "author": "Przykład E.",
+      "rating": 5,
+      "source": null,
+      "text": "Miejsce na prawdziwą opinię o współpracy przy dużym projekcie."
+    },
+    {
+      "id": "r6",
+      "isPlaceholder": true,
+      "world": "wkrenta",
+      "author": "Przykład F.",
+      "rating": 5,
+      "source": null,
+      "text": "Miejsce na prawdziwą opinię o tym, jak kolor wygląda po zagojeniu."
+    }
+  ],
+  "otherSources": [
+    {
+      "isPlaceholder": false,
+      "label": "Wkrenta na Facebooku",
+      "value": "100% poleceń",
+      "count": 12,
+      "checked": "2026-11-12",
+      "url": "https://www.facebook.com/wkrenta"
+    }
+  ]
+}

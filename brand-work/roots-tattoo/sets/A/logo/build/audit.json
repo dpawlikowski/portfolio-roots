@@ -1,0 +1,26 @@
+{
+  "schema": "brand-identity/audit@1",
+  "findings": [
+    {
+      "id": "logo.small-size",
+      "component": "logo",
+      "severity": "warn",
+      "measured": {
+        "stroke_px2": 2.93,
+        "gap_px2": 1.01
+      },
+      "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+      "message": "symbol-small at 16 px: features narrower than 1 px (lost 2.93 px², clogged 1.01 px²)",
+      "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+    },
+    {
+      "id": "logo.colors",
+      "component": "logo",
+      "severity": "warn",
+      "measured": 4,
+      "threshold": "<= 3 (heuristic, uncalibrated)",
+      "message": "4 colours in the logo",
+      "suggested_fix": "fewer colours or logo.colors_why"
+    }
+  ]
+}

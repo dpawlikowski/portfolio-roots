@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g id="o-styx" data-color="brand-3"><path id="o-left" data-glyphs="O" data-x="29" data-baseline="68" data-cap="50" data-anchor="middle"/></g>
+  <g id="o-wkrenta" data-color="brand-4"><path id="o-right" data-glyphs="O" data-x="71" data-baseline="68" data-cap="50" data-anchor="middle"/></g>
+  <g id="iris-styx" data-color="brand-3"><circle id="iris-l" cx="29" cy="42.5" r="6.6"/><circle id="pupil-l" cx="29" cy="42.5" r="3.04" data-op="subtract"/></g>
+  <g id="iris-wkrenta" data-color="brand-4"><circle id="iris-r" cx="71" cy="42.5" r="6.6"/><ellipse id="pupil-r" cx="71" cy="42.5" rx="1.32" ry="5.15" data-op="subtract"/></g>
+  <g id="drip-styx" data-color="brand-5"><path id="blood" d="M23.8 66.8 C 25.32 66.8, 25.4 68.88, 25.4 73.04 L 25.4 89.13 C 25.4 89.99, 24.84 89.88, 24.84 90.64 A 2.16 2.16 0 0 0 29.16 90.64 C 29.16 89.88, 28.6 89.99, 28.6 89.13 L 28.6 73.04 C 28.6 68.88, 28.68 66.8, 30.2 66.8 Z"/></g>
+  <g id="drip-wkrenta" data-color="brand-4"><path id="gum" d="M70.8 66.8 C 72.32 66.8, 72.4 68.24, 72.4 71.12 L 72.4 81.13 C 72.4 81.99, 71.84 81.88, 71.84 82.64 A 2.16 2.16 0 0 0 76.16 82.64 C 76.16 81.88, 75.6 81.99, 75.6 81.13 L 75.6 71.12 C 75.6 68.24, 75.68 66.8, 77.2 66.8 Z"/></g>
+</svg>

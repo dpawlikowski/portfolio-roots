@@ -1,0 +1,15 @@
+---
+import { copy } from '../lib/content';
+---
+<dialog class="lightbox" aria-label="Powiększone zdjęcie pracy">
+  <figure class="lightbox__figure">
+    <img class="lightbox__img" alt="" width="1600" height="2000" decoding="async" />
+  </figure>
+  <div class="lightbox__bar">
+    <button class="lightbox__btn" type="button" data-step="-1" aria-label={copy.lightbox.prev}>←</button>
+    <p class="lightbox__caption"></p>
+    <button class="lightbox__btn" type="button" data-step="1" aria-label={copy.lightbox.next}>→</button>
+  </div>
+  <button class="lightbox__btn lightbox__close" type="button" autofocus>{copy.lightbox.close} <span aria-hidden="true">✕</span></button>
+</dialog>
+<a class="sticky-cta" href="#kontakt">{copy.sticky}</a>

@@ -1,0 +1,77 @@
+{
+  "schema": "brand-identity/audit@1",
+  "findings": [
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.0,
+      "threshold": null,
+      "message": "full-color: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.0,
+      "threshold": null,
+      "message": "on-light-background: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.0,
+      "threshold": null,
+      "message": "favicon-16: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.0,
+      "threshold": null,
+      "message": "favicon-32: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.light-swap",
+      "component": "logo",
+      "severity": "info",
+      "measured": 1.0,
+      "threshold": null,
+      "message": "favicon-48: brand-2 #efeae3 is 1.00:1 on #efeae3; drawn in the light text colour #1c1c1c (a colour stays only where it reads)",
+      "suggested_fix": null,
+      "roles": [
+        "brand-2"
+      ]
+    },
+    {
+      "id": "logo.small-size",
+      "component": "logo",
+      "severity": "warn",
+      "measured": {
+        "stroke_px2": 1.92,
+        "gap_px2": 0.7
+      },
+      "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+      "message": "symbol-small at 16 px: features narrower than 1 px (lost 1.92 px², clogged 0.7 px²)",
+      "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+---
+import { copy, fill, studio, profile, showPlaceholders, isBracket } from '../lib/content';
+const f = copy.form;
+const { lat, lon } = studio.geo;
+const d = 0.004;
+const mapEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=${lon - d},${lat - d / 2},${lon + d},${lat + d / 2}&layer=mapnik&marker=${lat},${lon}`;
+const address = `${studio.address.street}, ${studio.address.postalCode} ${studio.address.locality}`;
+const mapsLink = studio.googleProfileUrl;
+const demo = studio.booking.isPlaceholder;
+const action = `https://formspree.io/f/${encodeURIComponent(studio.booking.formspreeId)}`;
+const people = [
+  { key: 'studio', name: studio.name, p: profile('studio') },
+  { key: 'styx', name: studio.artists.styx.name, p: profile('styx') },
+  { key: 'wkrenta', name: studio.artists.wkrenta.name, p: profile('wkrenta') },
+] as const;
+const tel = studio.phone.replace(/[^\d+]/g, '');
+const req = `<span class="req" aria-hidden="true" title="${f.requiredMark}">*</span>`;
+const opt = `<span class="opt">(${f.optional})</span>`;
+const showEmail = !isBracket(studio.email) || showPlaceholders;
+---
+<section class="contact" id="kontakt" data-theme="styx" aria-labelledby="contact-title">
+  <div class="contact__intro">
+    <p class="label">{copy.contact.label}</p>
+    <h2 class="contact__title" id="contact-title">{copy.contact.h2}</h2>
+    <p class="contact__text">{fill(copy.contact.text)}</p>
+
+    <dl class="facts">
+      <div><dt class="label">{copy.contact.address}</dt><dd><address>{studio.address.street}<br />{studio.address.postalCode} {studio.address.locality}</address></dd></div>
+      <div><dt class="label">{copy.contact.hours}</dt><dd><ul class="hours">{studio.hours.map((h) => <li><span>{h.label}</span> <span>{h.time}</span></li>)}</ul></dd></div>
+      <div><dt class="label">{copy.contact.phone}</dt><dd><a href={`tel:${tel}`}>{studio.phone}</a></dd></div>
+      {showEmail && <div><dt class="label">{copy.contact.email}</dt><dd><a href={`mailto:${studio.email}`}>{studio.email}</a></dd></div>}
+    </dl>
+
+    <p class="label contact__sub">{copy.contact.socialHeading}</p>
+    <ul class="people">
+      {people.filter((x) => x.p).map((x) => (
+        <li><a class:list={['person', `person--${x.key}`]} href={x.p!.url} rel="noopener" target="_blank">
+          <span class="person__name">{x.name}</span><span class="person__handle">{x.p!.network} · {x.p!.label}</span><span aria-hidden="true">↗</span>
+        </a></li>
+      ))}
+    </ul>
+
+    <div class="map">
+      <button class="map__facade" type="button" data-map-src={mapEmbed} data-map-title={`Mapa: ${address}`} hidden>
+        <span>{copy.contact.mapButton}</span>
+        <small>{copy.contact.mapNote}</small>
+      </button>
+      <a class="link" href={mapsLink} rel="noopener" target="_blank">{copy.contact.mapLink} <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
+  <form class="booking" action={action} method="POST" enctype="multipart/form-data" novalidate data-booking data-demo={demo ? 'true' : undefined} aria-labelledby="booking-title" aria-describedby="booking-note">
+    <h3 class="booking__title" id="booking-title">{f.heading}</h3>
+    <p class="booking__note" id="booking-note">{f.requiredNote}</p>
+    {demo && showPlaceholders && <p class="booking__demo"><span class="badge">przykład</span> {f.demo}</p>}
+
+    <fieldset class="field field--choice">
+      <legend>{f.artist} <Fragment set:html={opt} /></legend>
+      <div class="choices">
+        <label class="choice choice--styx"><input type="radio" name="artist" value="Styx" /><span>{fill(f.artistStyx)}</span></label>
+        <label class="choice choice--wkrenta"><input type="radio" name="artist" value="Wkrenta" /><span>{fill(f.artistWkrenta)}</span></label>
+        <label class="choice"><input type="radio" name="artist" value="nie wiem" checked /><span>{f.artistUnsure}</span></label>
+      </div>
+    </fieldset>
+
+    <div class="field">
+      <label for="b-idea">{f.idea} <Fragment set:html={req} /></label>
+      <textarea id="b-idea" name="idea" rows="3" required minlength="10" maxlength="2000" aria-describedby="b-idea-hint b-idea-err b-idea-count"></textarea>
+      <div class="field__meta"><p class="field__hint" id="b-idea-hint">{f.ideaHint}</p><p class="field__count" id="b-idea-count" data-template={f.counter}></p></div>
+      <p class="field__error" id="b-idea-err" data-msg-required={f.required} data-msg-short="Napisz chociaż kilka słów (minimum 10 znaków)."></p>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="b-place">{f.placement} <Fragment set:html={opt} /></label>
+        <input id="b-place" name="placement" type="text" maxlength="80" aria-describedby="b-place-hint" />
+        <p class="field__hint" id="b-place-hint">{f.placementHint}</p>
+      </div>
+      <div class="field">
+        <label for="b-size">{f.size} <Fragment set:html={opt} /></label>
+        <select id="b-size" name="size">{f.sizes.map((s) => <option value={s}>{s}</option>)}</select>
+      </div>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="b-name">{f.name} <Fragment set:html={req} /></label>
+        <input id="b-name" name="name" type="text" autocomplete="given-name" required maxlength="80" aria-describedby="b-name-err" />
+        <p class="field__error" id="b-name-err" data-msg-required={f.required}></p>
+      </div>
+      <div class="field">
+        <label for="b-email">{f.contact} <Fragment set:html={req} /></label>
+        <input id="b-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="120" aria-describedby="b-email-hint b-email-err" />
+        <p class="field__hint" id="b-email-hint">{f.contactHint}</p>
+        <p class="field__error" id="b-email-err" data-msg-required={f.required} data-msg-type={f.emailInvalid}></p>
+      </div>
+    </div>
+    <div class="field field--files" data-files data-max="3" data-max-mb="10" data-msg-many={f.filesTooMany} data-msg-big={f.filesTooBig} data-msg-type={f.filesWrongType} data-remove={f.filesRemove}>
+      <label for="b-files">{f.files} <Fragment set:html={opt} /></label>
+      <div class="files__drop">
+        <input
+          id="b-files"
+          class="files__input"
+          name="attachment"
+          type="file"
+          multiple
+          accept="image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf,.heic,.heif"
+          aria-describedby="b-files-hint b-files-err"
+        />
+        <p class="field__hint" id="b-files-hint">{f.filesHint}</p>
+      </div>
+      <ul class="files__list" aria-label="Dodane pliki"></ul>
+      <p class="field__error" id="b-files-err" role="alert"></p>
+    </div>
+    <div class="field field--check">
+      <input id="b-age" name="adult" type="checkbox" value="tak" required aria-describedby="b-age-err" />
+      <label for="b-age">{f.age} <Fragment set:html={req} /></label>
+      <p class="field__error" id="b-age-err" data-msg-required={fill(f.ageRequired).replace(/^\[|\]$/g, '')}></p>
+    </div>
+
+    <div class="hp" aria-hidden="true">
+      <label for="b-gotcha">Nie wypełniaj</label>
+      <input id="b-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+    </div>
+    <input type="hidden" name="_subject" value={`Rezerwacja: ${studio.name}`} />
+
+    <p class="booking__privacy">{f.privacy}</p>
+    <button class="cta cta--submit" type="submit" data-label={f.submit} data-sending={f.sending}>{f.submit} <span aria-hidden="true">→</span></button>
+    <p class="booking__status" role="status" aria-live="polite" data-success={fill(f.success)} data-error={f.error} data-invalid={f.invalid} data-demo-msg={f.demo}></p>
+  </form>
+</section>

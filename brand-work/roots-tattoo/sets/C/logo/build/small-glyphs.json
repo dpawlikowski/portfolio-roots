@@ -1,0 +1,63 @@
+{
+ "units": "symbol grid 0..100; index = position in data-glyphs (1-based)",
+ "symbol": [
+  {
+   "id": "r-cut-shadow",
+   "text": "R",
+   "location": {
+    "wght": 400
+   },
+   "glyphs": [
+    {
+     "index": 1,
+     "char": "R",
+     "x0": 26.52,
+     "x1": 69.48,
+     "cap_top": 31.0,
+     "baseline": 67.0,
+     "stems": [
+      [
+       32.43,
+       46.0
+      ],
+      [
+       51.54,
+       64.97
+      ]
+     ],
+     "pen_x": 27.86,
+     "advance": 41.03
+    }
+   ]
+  },
+  {
+   "id": "r-cut",
+   "text": "R",
+   "location": {
+    "wght": 400
+   },
+   "glyphs": [
+    {
+     "index": 1,
+     "char": "R",
+     "x0": 26.52,
+     "x1": 69.48,
+     "cap_top": 31.0,
+     "baseline": 67.0,
+     "stems": [
+      [
+       32.43,
+       46.0
+      ],
+      [
+       51.54,
+       64.97
+      ]
+     ],
+     "pen_x": 27.86,
+     "advance": 41.03
+    }
+   ]
+  }
+ ]
+}

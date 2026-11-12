@@ -1,0 +1,125 @@
+/* ---------- Prolog: one room, two temperatures, split by a seam ---------- */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  --st: 64%; /* seam x at the top */
+  --sb: 36%; /* seam x at the bottom: a static diagonal without JS */
+}
+.hero__world {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: clamp(16px, 2.4vh, 28px);
+  padding: calc(var(--nav-h) + 3vh) var(--gutter) clamp(178px, 27vh, 236px);
+  background: var(--bg);
+  color: var(--fg);
+}
+.hero__world--styx {
+  background:
+    radial-gradient(70% 60% at 20% 18%, rgb(239 234 227 / 0.09), transparent 70%),
+    var(--ink);
+}
+.hero__world--wkrenta {
+  background:
+    radial-gradient(60% 55% at 80% 70%, rgb(255 46 147 / 0.16), transparent 70%),
+    radial-gradient(50% 50% at 70% 10%, rgb(123 44 245 / 0.18), transparent 70%),
+    var(--night);
+  clip-path: polygon(var(--st) 0, 100% 0, 100% 100%, var(--sb) 100%);
+}
+/* Film grain on both sides: cheap, static, CSS only. */
+.hero__world::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url('../assets/grain.png');
+  background-size: 128px 128px;
+}
+.hero__label { position: relative; }
+.hero__title {
+  position: relative;
+  max-width: 14ch;
+  font-family: var(--f-serif);
+  font-size: var(--t-h1);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+}
+.hero__line { display: block; }
+.hero__title em { font-style: italic; }
+.hero__world--styx .hero__title em { color: var(--silver); }
+.hero__world--wkrenta .hero__title em { color: var(--pink); }
+.hero__lead {
+  position: relative;
+  max-width: 36ch;
+  font-size: var(--t-lead);
+  line-height: 1.4;
+  color: var(--fg-muted);
+}
+
+.hero__seam {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  clip-path: polygon(calc(var(--st) - 1px) 0, calc(var(--st) + 1px) 0, calc(var(--sb) + 1px) 100%, calc(var(--sb) - 1px) 100%);
+  background: rgb(239 234 227 / 0.5);
+}
+
+.hero__ui {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: clamp(24px, 5vh, 56px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+}
+.pick {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7em;
+  min-height: 52px;
+  padding: 0 1.4em;
+  border-radius: 999px;
+  font: 700 var(--t-small)/1 var(--f-sans);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform var(--dur-1) var(--ease-out);
+}
+.pick--styx { background: var(--ink); color: var(--bone); border: 1px solid rgb(239 234 227 / 0.45); }
+.pick--wkrenta { background: var(--pink); color: var(--night); border: 1px solid var(--pink); }
+@media (hover: hover) { .pick:hover { transform: translateY(-2px); } }
+.hero__proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--tap);
+  color: var(--bone);
+  font-weight: 600;
+  font-size: var(--t-small);
+  text-decoration: none;
+}
+.hero__stars { color: var(--pink); letter-spacing: 0.1em; }
+@media (hover: hover) { .hero__proof:hover span:last-child { text-decoration: underline; } }
+.hero__hint {
+  display: none;
+  flex-basis: 100%;
+  font-size: var(--t-small);
+  color: var(--silver);
+}
+@media (min-width: 900px) {
+  .hero__hint { display: block; flex-basis: auto; margin-left: auto; }
+}
+/* Landscape phones: smaller hero, nothing breaks. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero { min-height: 420px; height: auto; }
+  .hero__world { position: relative; padding-bottom: 120px; }
+  .hero__world--wkrenta { position: absolute; }
+  .hero__title { font-size: clamp(2.5rem, 9vh, 4rem); }
+}
+html.fx .hero__world--wkrenta, html.fx .hero__seam { will-change: clip-path; }

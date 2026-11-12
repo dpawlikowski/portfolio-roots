@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+test-results/
+playwright-report/
+.lighthouseci/
+brand-work/roots-tattoo/.cache/
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,167 @@
+{
+  "_note": "8–10 works per chapter. src = file name in src/assets/works/. Replace each generated placeholder tile with the artist's own photo (4:5, min. 1600 × 2000 px), update caption, placement and alt, and set isPlaceholder to false. Captions describe the kind of work seen on the artists' profiles, not specific pieces.",
+  "styx": [
+    {
+      "id": "styx-01",
+      "isPlaceholder": true,
+      "src": "styx-01.jpg",
+      "caption": "Czaszka w dymie",
+      "placement": "przedramię",
+      "style": "black & grey",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: realistyczna czaszka wyłaniająca się z dymu, czerń i szarość na przedramieniu."
+    },
+    {
+      "id": "styx-02",
+      "isPlaceholder": true,
+      "src": "styx-02.jpg",
+      "caption": "Rękaw: twarze z mgły",
+      "placement": "ramię",
+      "style": "black & grey",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: pełny rękaw z twarzami rozmywającymi się we mgle."
+    },
+    {
+      "id": "styx-03",
+      "isPlaceholder": true,
+      "src": "styx-03.jpg",
+      "caption": "Serce anatomiczne",
+      "placement": "klatka piersiowa",
+      "style": "black & grey z czerwienią",
+      "year": 2025,
+      "alt": "Miejsce na zdjęcie: anatomiczne serce z czerwonymi zaciekami na klatce piersiowej."
+    },
+    {
+      "id": "styx-04",
+      "isPlaceholder": true,
+      "src": "styx-04.jpg",
+      "caption": "Para z cienia",
+      "placement": "udo",
+      "style": "black & grey",
+      "year": 2025,
+      "alt": "Miejsce na zdjęcie: dwie splecione postacie w cieniu, realizm na udzie."
+    },
+    {
+      "id": "styx-05",
+      "isPlaceholder": true,
+      "src": "styx-05.jpg",
+      "caption": "Biomech na szyi",
+      "placement": "szyja",
+      "style": "dark art",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: biomechaniczny wzór na boku szyi."
+    },
+    {
+      "id": "styx-06",
+      "isPlaceholder": true,
+      "src": "styx-06.jpg",
+      "caption": "Portret w okularach",
+      "placement": "przedramię",
+      "style": "portret",
+      "year": 2025,
+      "alt": "Miejsce na zdjęcie: realistyczny portret w ciemnych okularach na przedramieniu."
+    },
+    {
+      "id": "styx-07",
+      "isPlaceholder": true,
+      "src": "styx-07.jpg",
+      "caption": "Rękaw: las i dym",
+      "placement": "przedramię",
+      "style": "black & grey",
+      "year": 2024,
+      "alt": "Miejsce na zdjęcie: rękaw z lasem i smugami dymu."
+    },
+    {
+      "id": "styx-08",
+      "isPlaceholder": true,
+      "src": "styx-08.jpg",
+      "caption": "Kamienny anioł",
+      "placement": "plecy",
+      "style": "black & grey",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: kamienny anioł w półmroku na plecach."
+    }
+  ],
+  "wkrenta": [
+    {
+      "id": "wkrenta-01",
+      "isPlaceholder": true,
+      "src": "wkrenta-01.jpg",
+      "caption": "Neonowa róża z kleksami",
+      "placement": "przedramię",
+      "style": "kolorowy realizm",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: neonowa róża w magencie i cyjanie z kleksami tuszu na przedramieniu."
+    },
+    {
+      "id": "wkrenta-02",
+      "isPlaceholder": true,
+      "src": "wkrenta-02.jpg",
+      "caption": "Kot w różowych okularach",
+      "placement": "łydka",
+      "style": "pop",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: kot w różowych okularach, z balonem gumy, wytatuowany na łydce."
+    },
+    {
+      "id": "wkrenta-03",
+      "isPlaceholder": true,
+      "src": "wkrenta-03.jpg",
+      "caption": "Pies jak żywy",
+      "placement": "ramię",
+      "style": "kolorowy realizm",
+      "year": 2025,
+      "alt": "Miejsce na zdjęcie: realistyczny portret psa w kolorze na ramieniu."
+    },
+    {
+      "id": "wkrenta-04",
+      "isPlaceholder": true,
+      "src": "wkrenta-04.jpg",
+      "caption": "Dziewczyna z gumą balonową",
+      "placement": "udo",
+      "style": "pop",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: portret dziewczyny z różowym balonem gumy, wytatuowany na udzie."
+    },
+    {
+      "id": "wkrenta-05",
+      "isPlaceholder": true,
+      "src": "wkrenta-05.jpg",
+      "caption": "Kwiat w cyjanie",
+      "placement": "przedramię",
+      "style": "kolorowy realizm",
+      "year": 2025,
+      "alt": "Miejsce na zdjęcie: kwiat w cyjanie i fiolecie z rozpryskami na przedramieniu."
+    },
+    {
+      "id": "wkrenta-06",
+      "isPlaceholder": true,
+      "src": "wkrenta-06.jpg",
+      "caption": "Gotowy projekt: kocie oczy",
+      "placement": "łydka",
+      "style": "gotowy projekt",
+      "year": 2026,
+      "alt": "Miejsce na zdjęcie: kolorowy tatuaż z kocimi oczami na łydce."
+    },
+    {
+      "id": "wkrenta-07",
+      "isPlaceholder": true,
+      "src": "wkrenta-07.jpg",
+      "caption": "Kwiaty rok po sesji",
+      "placement": "przedramię",
+      "style": "zagojony",
+      "year": 2025,
+      "alt": "Miejsce na zdjęcie: zagojony kolorowy tatuaż z kwiatami, rok po sesji."
+    },
+    {
+      "id": "wkrenta-08",
+      "isPlaceholder": true,
+      "src": "wkrenta-08.jpg",
+      "caption": "Motyl w neonie",
+      "placement": "dłoń",
+      "style": "pop",
+      "year": 2024,
+      "alt": "Miejsce na zdjęcie: neonowy motyl na dłoni."
+    }
+  ]
+}

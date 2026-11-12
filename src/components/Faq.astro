@@ -1,0 +1,18 @@
+---
+import { copy, fill } from '../lib/content';
+const faq = copy.faq;
+---
+<section class="faq" id="pytania" data-theme="styx" aria-labelledby="faq-title">
+  <div class="faq__head">
+    <p class="label">{faq.label}</p>
+    <h2 class="faq__title" id="faq-title">{faq.h2}</h2>
+  </div>
+  <div class="faq__list">
+    {faq.items.map((item, i) => (
+      <details class="faq__item" open={i === 0}>
+        <summary class="faq__q">{item.q}</summary>
+        <p class="faq__a">{fill(item.a).replace(/^\[|\]$/g, '')}</p>
+      </details>
+    ))}
+  </div>
+</section>

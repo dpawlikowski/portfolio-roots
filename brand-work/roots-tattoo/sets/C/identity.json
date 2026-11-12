@@ -1,0 +1,398 @@
+{
+  "schema": "brand-identity/identity@1",
+  "brand": {
+    "name": "Roots Tattoo",
+    "tagline": "Jedne korzenie. Dwa światy.",
+    "languages": [
+      "pl"
+    ],
+    "doc_lang": "pl",
+    "sector": "studio tatuażu, Łódź",
+    "numbers": false,
+    "copy": {
+      "sentence": {
+        "pl": "Styx tatuuje w czerni i szarości, Wkrenta w pełnym kolorze. Zażółć gęślą jaźń."
+      },
+      "nav": [
+        "Styx",
+        "Wkrenta",
+        "Opinie",
+        "Kontakt"
+      ],
+      "cta": "Umów się"
+    }
+  },
+  "set": {
+    "id": "C",
+    "name": "Balon gumy",
+    "recommended": false,
+    "mechanism": "Guma balonowa z portretów Wkrenty: okrągły balon z wyciętym R, przesunięty cień jak naklejka, gruba popowa kursywa i cukierkowy róż z kwasem na ultrafiolecie.",
+    "expression_move": "Przesunięty cień naklejki pod znakiem i logotypem.",
+    "differs_by": "Najgłośniejszy i najbardziej popowy kierunek: ultrafioletowa noc zamiast czerni i grotesku konkurencji, kursywa zamiast wąskiego kroju."
+  },
+  "axes": {
+    "quiet_loud": 2,
+    "playful_serious": -2,
+    "premium_accessible": 1,
+    "classic_contemporary": 1
+  },
+  "components": {
+    "logo": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "type": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    },
+    "palette": {
+      "mode": "new",
+      "status": "proposed",
+      "source": null,
+      "sha256": null
+    }
+  },
+  "type": {
+    "pairing_mode": "contrast",
+    "display": {
+      "family": "Shrikhand",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400
+      ],
+      "location": {},
+      "features": [],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "Arial Black, sans-serif",
+      "file": null
+    },
+    "text": {
+      "family": "Bricolage Grotesque",
+      "source": "google",
+      "license": "OFL-1.1",
+      "weights": [
+        400,
+        600
+      ],
+      "location": {
+        "opsz": 14,
+        "wdth": 100,
+        "wght": 400
+      },
+      "features": [],
+      "case": "as-is",
+      "tracking": 0,
+      "fallback": "system-ui, sans-serif",
+      "file": null
+    },
+    "mono": null
+  },
+  "logo": {
+    "type": "symbol+wordmark",
+    "concept": "Balon gumy z wyciętym R, naklejony z przesunięciem.",
+    "symbol": "logo/symbol.svg",
+    "wordmark": {
+      "text": "Roots",
+      "role": "display",
+      "location": null,
+      "tracking": 0,
+      "case": "as-is"
+    },
+    "monogram": null,
+    "lockups": [
+      "horizontal",
+      "stacked"
+    ],
+    "colors": {
+      "sticker-shadow": "brand-3",
+      "bubble": "brand-2",
+      "wordmark": "brand-2"
+    },
+    "tags": [
+      "circle-container"
+    ],
+    "clear_space": {
+      "unit": "cap-height",
+      "multiple": 1,
+      "inferred": true
+    },
+    "min_size": {
+      "px": 24,
+      "mm": 8
+    },
+    "defect": "Połysk był fałszywą dziurą, a w jednym kolorze cień zalewał R; połysk i R są teraz prawdziwymi wycięciami w balonie i w cieniu."
+  },
+  "palette": "palette.json",
+  "defaults_used": [
+    {
+      "id": "circle-container",
+      "why": "Koło jest tu balonem gumy z prac Wkrenty, a nie kontenerem; bez niego znak traci sens."
+    }
+  ],
+  "rationale": [
+    {
+      "claim": "Kierunek celowo przechylony w stronę Wkrenty; Styx jest w nim gościem.",
+      "evidence": "judgement",
+      "source": "design"
+    }
+  ],
+  "derived": [
+    {
+      "file": "card.png",
+      "requires": [
+        "logo",
+        "type",
+        "palette"
+      ],
+      "inputs_sha256": "8a2af746d87c59c5a8a534370088895a4ef023fd7589211731d8ed309d053521"
+    }
+  ],
+  "audit": {
+    "schema": "brand-identity/audit@1",
+    "passed": true,
+    "counts": {
+      "gate": 0,
+      "warn": 9,
+      "info": 8
+    },
+    "findings": [
+      {
+        "id": "palette.contrast.light.accent-on-background",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 1.15,
+        "threshold": 3.0,
+        "message": "light: accent #c6f432 on background #f7f2ee is 1.15:1, below 3.0:1 (accent fill against the page (needs a label or border if lower); WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.accent",
+          "from": "#c6f432",
+          "to": "#74890a",
+          "how": "use accent-600 (same scale)",
+          "ratio_after": 3.55
+        },
+        "roles": [
+          "light.accent",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.extended.ui.light.ext-1",
+        "component": "palette",
+        "severity": "warn",
+        "measured": 1.2,
+        "threshold": 3.0,
+        "message": "light: ext-1 #e6daf5 is 1.20:1 on the light background #f7f2ee; as a stripe, chart series or thin line it needs 3:1 (WCAG 1.4.11)",
+        "suggested_fix": {
+          "change": "extended.ext-1",
+          "from": "#e6daf5",
+          "to": "#857894",
+          "how": "use ext-1-600 for stripes, chart series and thin lines"
+        },
+        "roles": [
+          "ext-1"
+        ]
+      },
+      {
+        "id": "palette.contrast.light.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.37,
+        "threshold": 3.0,
+        "message": "light: border #d9d0ca on background #f7f2ee is 1.37:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.light.border",
+          "from": "#d9d0ca",
+          "to": "#948b86",
+          "how": "darken by OKLCH L -0.22, same hue",
+          "ratio_after": 3.0
+        },
+        "roles": [
+          "light.border",
+          "light.background"
+        ]
+      },
+      {
+        "id": "palette.contrast.dark.border-on-background",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.9,
+        "threshold": 3.0,
+        "message": "dark: border #443e4b on background #13061f is 1.90:1, below 3.0:1 (borders: dividers are exempt, input outlines need 3:1; WCAG 2, no rounding)",
+        "suggested_fix": {
+          "change": "modes.dark.border",
+          "from": "#443e4b",
+          "to": "#75717b",
+          "how": "use neutral-500 (same scale)",
+          "ratio_after": 4.1
+        },
+        "roles": [
+          "dark.border",
+          "dark.background"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-2",
+        "component": "palette",
+        "severity": "info",
+        "measured": 1.0,
+        "threshold": 0.9,
+        "message": "#ff2e93 sits at the sRGB gamut edge (100% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-2"
+        ]
+      },
+      {
+        "id": "palette.gamut.brand-3",
+        "component": "palette",
+        "severity": "info",
+        "measured": 0.94,
+        "threshold": 0.9,
+        "message": "#c6f432 sits at the sRGB gamut edge (94% of max chroma); vivid colours like this often fall outside CMYK process gamut: specify Lab D50 + tolerance, check with the printer, consider a spot colour",
+        "suggested_fix": null,
+        "roles": [
+          "brand-3"
+        ]
+      },
+      {
+        "id": "type.display.coverage.pl_Latn.extended",
+        "component": "type",
+        "severity": "info",
+        "measured": "72/73",
+        "threshold": "100% auxiliary + punctuation",
+        "message": "Shrikhand lacks Polish auxiliary/punctuation characters: ẞ",
+        "suggested_fix": "fine if the brand never writes them (loanwords, names); else another family"
+      },
+      {
+        "id": "type.display.coverage.gf-latin-core",
+        "component": "type",
+        "severity": "info",
+        "measured": "283/319",
+        "threshold": "GF Latin Core",
+        "message": "Shrikhand misses 36/319 GF Latin Core codepoints (reach beyond the brief's languages)",
+        "suggested_fix": "matters only if the brand may add more Latin-script languages"
+      },
+      {
+        "id": "type.display.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 13,
+        "threshold": null,
+        "message": "Shrikhand: ~13 KB WOFF2 for the brief's characters (per weight file; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "type.text.confusables",
+        "component": "type",
+        "severity": "warn",
+        "measured": 0.916,
+        "threshold": "0.9 (heuristic, uncalibrated)",
+        "message": "Bricolage Grotesque: I/l look alike at small sizes (IoU 0.92 at 48 px)",
+        "suggested_fix": "no ss/cv alternates; choose another face for small text and data"
+      },
+      {
+        "id": "type.text.web-weight",
+        "component": "type",
+        "severity": "info",
+        "measured": 129,
+        "threshold": null,
+        "message": "Bricolage Grotesque: ~129 KB WOFF2 for the brief's characters (one variable file, all weights; estimate)",
+        "suggested_fix": null
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 1.15,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "full-color: brand-3 #c6f432 on #f7f2ee is 1.15:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-3"
+        ]
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 1.15,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "on-light-background: brand-3 #c6f432 on #f7f2ee is 1.15:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-3"
+        ]
+      },
+      {
+        "id": "logo.contrast",
+        "component": "logo",
+        "severity": "warn",
+        "measured": 1.15,
+        "threshold": ">= 3.0:1 (WCAG 2.2 SC 1.4.11, practice)",
+        "message": "symbol-only: brand-3 #c6f432 on #f7f2ee is 1.15:1",
+        "suggested_fix": "use a one-colour version on this ground, or declare logo.device tile|outline",
+        "roles": [
+          "brand-3"
+        ]
+      },
+      {
+        "id": "logo.thin-feature",
+        "component": "logo",
+        "severity": "warn",
+        "measured": {
+          "stroke_px2": 0.19,
+          "gap_px2": 1.1
+        },
+        "threshold": ">= 1 px = 4.2 units (heuristic, uncalibrated)",
+        "message": "symbol at 24 px (min size): strokes/gaps thinner than 1 px (lost 0.19 px², clogged 1.1 px²)",
+        "suggested_fix": "add symbol_small_svg for small sizes, or raise logo.min_size.px (or thicken the thin part / widen the gap)"
+      },
+      {
+        "id": "logo.small-size",
+        "component": "logo",
+        "severity": "warn",
+        "measured": {
+          "stroke_px2": 0.11,
+          "gap_px2": 0.51
+        },
+        "threshold": "1 px (raster erosion test, heuristic, uncalibrated)",
+        "message": "symbol at 16 px: features narrower than 1 px (lost 0.11 px², clogged 0.51 px²)",
+        "suggested_fix": "add or simplify symbol-small.svg: fewer, bolder parts"
+      },
+      {
+        "id": "cohesion.sets-close",
+        "component": "cohesion",
+        "severity": "warn",
+        "measured": [
+          "A–C"
+        ],
+        "threshold": "2 axes, 2 steps",
+        "message": "sets too alike on the axes: A–C differ by 2+ steps on fewer than 2 axes (heuristic)",
+        "suggested_fix": null
+      }
+    ],
+    "defaults": {
+      "matched": [
+        "logo-circle-container"
+      ]
+    }
+  },
+  "card": {
+    "ground": "brand-1"
+  },
+  "palette_build": {
+    "strategy": null,
+    "accent": "#C6F432",
+    "light_bg": "#F7F2EE",
+    "dark_bg": "#13061F",
+    "neutral_tint": null,
+    "neutral_chroma": null,
+    "extra": []
+  }
+}

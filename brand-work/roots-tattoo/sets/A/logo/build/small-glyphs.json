@@ -1,0 +1,67 @@
+{
+ "units": "symbol grid 0..100; index = position in data-glyphs (1-based)",
+ "symbol-small": [
+  {
+   "id": "o-left",
+   "text": "O",
+   "location": {
+    "opsz": 96,
+    "wdth": 100,
+    "wght": 800
+   },
+   "glyphs": [
+    {
+     "index": 1,
+     "char": "O",
+     "x0": 6.01,
+     "x1": 51.99,
+     "cap_top": 18.0,
+     "baseline": 68.0,
+     "stems": [
+      [
+       6.26,
+       19.04
+      ],
+      [
+       39.09,
+       51.71
+      ]
+     ],
+     "pen_x": 3.96,
+     "advance": 50.08
+    }
+   ]
+  },
+  {
+   "id": "o-right",
+   "text": "O",
+   "location": {
+    "opsz": 96,
+    "wdth": 100,
+    "wght": 800
+   },
+   "glyphs": [
+    {
+     "index": 1,
+     "char": "O",
+     "x0": 48.01,
+     "x1": 93.99,
+     "cap_top": 18.0,
+     "baseline": 68.0,
+     "stems": [
+      [
+       48.26,
+       61.04
+      ],
+      [
+       81.09,
+       93.71
+      ]
+     ],
+     "pen_x": 45.96,
+     "advance": 50.08
+    }
+   ]
+  }
+ ]
+}

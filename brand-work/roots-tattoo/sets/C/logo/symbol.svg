@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g id="sticker-shadow" data-color="brand-3"><circle id="shadow" cx="54" cy="56" r="38"/><path id="r-cut-shadow" data-glyphs="R" data-x="48" data-baseline="67" data-cap="36" data-anchor="middle" data-op="subtract"/></g>
+  <g id="bubble" data-color="brand-2"><circle id="gum" cx="48" cy="50" r="38"/><path id="r-cut" data-glyphs="R" data-x="48" data-baseline="67" data-cap="36" data-anchor="middle" data-op="subtract"/><ellipse id="gloss" cx="29" cy="30.24" rx="7.6" ry="3.8" transform="rotate(-35 29 30.24)" data-op="subtract"/></g>
+</svg>

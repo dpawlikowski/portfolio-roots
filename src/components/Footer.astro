@@ -1,0 +1,18 @@
+---
+import Logo from './Logo.astro';
+import { copy, fill, studio, isBracket, showPlaceholders } from '../lib/content';
+const year = new Date().getFullYear();
+const legal = [studio.legalName, studio.nip && `NIP ${studio.nip}`].filter((x) => x && (showPlaceholders || !isBracket(String(x).replace(/^NIP /, ''))));
+---
+<footer class="footer" data-theme="styx">
+  <Logo class="footer__logo" />
+  <p class="footer__line">{fill(copy.footer.line)}</p>
+  <p class="footer__legal">
+    © {year} {studio.name}{legal.length > 0 && <> · {legal.join(' · ')}</>}<br />
+    {studio.address.street}, {studio.address.postalCode} {studio.address.locality}
+  </p>
+  <button class="footer__egg" type="button" aria-label={copy.footer.egg} aria-expanded="false" aria-controls="egg">
+    <Logo kind="mark" class="footer__mark" />
+  </button>
+  <p class="egg" id="egg" hidden>{copy.footer.eggText}</p>
+</footer>

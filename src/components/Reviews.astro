@@ -1,0 +1,52 @@
+---
+import { copy, reviews, visibleReviews, studio, isUrl, fill } from '../lib/content';
+const rating = reviews.rating;
+const profileUrl = isUrl(studio.googleProfileUrl) ? studio.googleProfileUrl : null;
+const names = { styx: fill('{{STYX}}'), wkrenta: fill('{{WKRENTA}}') };
+const genitive = { styx: studio.artists.styx.genitive, wkrenta: studio.artists.wkrenta.genitive };
+const score = new Intl.NumberFormat('pl-PL', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(rating.value);
+---
+<section class="reviews" id="opinie" data-theme="wkrenta" aria-labelledby="reviews-title">
+  <div class="reviews__head">
+    <p class="label">{copy.reviews.label}</p>
+    <h2 class="reviews__title" id="reviews-title">{copy.reviews.h2}</h2>
+    {!rating.isPlaceholder && (
+      <p class="reviews__rating">
+        <span class="reviews__score">{score}</span>
+        <span class="reviews__meta">{copy.reviews.ratingLabel} · {rating.count} {copy.reviews.countLabel}</span>
+      </p>
+    )}
+    {reviews.otherSources?.filter((s) => !s.isPlaceholder).map((s) => (
+      <p class="reviews__other"><a href={s.url} rel="noopener" target="_blank">{s.label}: <strong>{s.value}</strong> · {s.count} {copy.reviews.countLabel}</a></p>
+    ))}
+    {profileUrl && <a class="link" href={profileUrl} rel="noopener" target="_blank">{copy.reviews.profileLink} <span aria-hidden="true">↗</span></a>}
+  </div>
+
+  {visibleReviews.length > 0 ? (
+    <div class="ribbon" data-ribbon>
+      <ul class="ribbon__list">
+        {visibleReviews.map((r) => (
+          <li class:list={['review', `review--${r.world}`]} data-theme={r.world}>
+            <blockquote class="review__text"><p>{r.text}</p></blockquote>
+            <p class="review__who">
+              <span class="review__author">{r.author}</span>
+              <span class="review__artist">u {genitive[r.world as 'styx' | 'wkrenta'] ?? names[r.world as 'styx' | 'wkrenta']}</span>
+              {r.source && <a class="review__source" href={r.source} rel="noopener" target="_blank">Google</a>}
+              {r.isPlaceholder && <span class="badge">{copy.reviews.sampleBadge}</span>}
+            </p>
+          </li>
+        ))}
+      </ul>
+      <ul class="ribbon__list ribbon__list--clone" aria-hidden="true">
+        {visibleReviews.map((r) => (
+          <li class:list={['review', `review--${r.world}`]} data-theme={r.world}>
+            <div class="review__text"><p>{r.text}</p></div>
+            <p class="review__who"><span class="review__author">{r.author}</span></p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <p class="reviews__empty">{copy.reviews.empty}</p>
+  )}
+</section>

@@ -1,0 +1,49 @@
+---
+import { Picture, getImage } from 'astro:assets';
+import { workImage, workPreview } from '../lib/images';
+import { showPlaceholders, type Work, type World } from '../lib/content';
+
+interface Props {
+  work: Work;
+  index: number;
+  total: number;
+  world: World;
+  eager?: boolean;
+}
+const { work, index, total, world, eager = false } = Astro.props;
+const image = workImage(work.src);
+const preview = workPreview(work.src);
+const large = await getImage({ src: image, width: 1600, format: 'webp', quality: 80 });
+const number = `${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+---
+<figure
+  class:list={['work', `work--${world}`]}
+  data-index={index}
+  data-title={work.caption}
+  style={`--lqip-color:${preview.color};${preview.src ? `--lqip:url(${preview.src})` : ''}`}
+>
+  <a class="work__link" href={large.src} data-large={large.src} data-caption={`${work.caption} · ${work.placement} · ${work.style}`}>
+    <span class="work__frame">
+      <Picture
+        class="work__img"
+        src={image}
+        alt={work.alt}
+        formats={['avif', 'webp']}
+        fallbackFormat="jpg"
+        widths={[360, 540, 720, 960, 1280]}
+        sizes="(min-width: 768px) min(34vw, 870px), 78vw"
+        loading={eager ? 'eager' : 'lazy'}
+        decoding="async"
+        quality={70}
+      />
+      <span class="work__sheen" aria-hidden="true"></span>
+    </span>
+    <span class="visually-hidden"> (powiększ zdjęcie)</span>
+  </a>
+  <figcaption class="work__caption">
+    <span class="work__num" aria-hidden="true">{number}</span>
+    <span class="work__title">{work.caption}</span>
+    <span class="work__meta">{work.placement} · {work.style}</span>
+    {showPlaceholders && work.isPlaceholder && <span class="badge">przykład</span>}
+  </figcaption>
+</figure>

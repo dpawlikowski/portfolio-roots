@@ -1,0 +1,70 @@
+---
+import Work from './Work.astro';
+import { copy, fill, works, studio, profile, type World } from '../lib/content';
+import words from '../generated/words.json';
+
+interface Props {
+  world: World;
+}
+const { world } = Astro.props;
+const text = copy[world];
+const items = works[world];
+const artist = studio.artists[world];
+const link = profile(world);
+const titleId = `${world}-title`;
+// Hidden eyes in Styx's dark: the lantern (pointer / long press) reveals them. Coordinates on a 1600×900 stage.
+const eyes = [
+  [210, 190, 1], [1380, 640, 1.3], [760, 150, 0.8], [980, 760, 0.9], [420, 700, 1.1], [1220, 210, 0.7], [1500, 380, 0.9], [90, 520, 0.8],
+];
+---
+<section class:list={['act', `act--${world}`]} id={world} data-theme={world} data-act={world} aria-labelledby={titleId}>
+  <div class="act__stage">
+    <div class="act__bg" aria-hidden="true">
+      {world === 'styx' && (
+        <>
+          <div class="act__glow"></div>
+          <svg class="act__eyes" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+            {eyes.map(([x, y, s]) => (
+              <g transform={`translate(${x} ${y}) scale(${s})`}>
+                <path d="M-70 0 Q0 -44 70 0 Q0 44 -70 0 Z" fill="none" stroke="currentColor" stroke-width="1.6"></path>
+                <circle r="20" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+                <circle r="8" fill="currentColor"></circle>
+              </g>
+            ))}
+          </svg>
+        </>
+      )}
+      {world === 'wkrenta' && <canvas class="act__trail" width="1" height="1"></canvas>}
+    </div>
+
+    <div class="act__track" data-track>
+      <div class="panel panel--intro">
+        <p class="label">{text.label}</p>
+        {world === 'styx' ? (
+          <p class="act__name act__name--styx" aria-hidden="true">Styx<span class="act__dot"></span></p>
+        ) : (
+          <svg class="act__name act__name--wkrenta" viewBox={words.wkrenta.viewBox} aria-hidden="true" focusable="false"><path d={words.wkrenta.d} fill="currentColor"></path></svg>
+        )}
+        <h2 class="act__title" id={titleId}>{fill(text.h2)}</h2>
+        <p class="act__text">{fill(text.text)}</p>
+        <ul class="act__tags" aria-label="Style">
+          {artist.styles.map((s) => <li>{s}</li>)}
+        </ul>
+        <a class="cta" href="#kontakt" data-artist={world}>{text.cta}</a>
+      </div>
+
+      {items.map((work, i) => <Work work={work} index={i} total={items.length} world={world} />)}
+
+      <div class="panel panel--outro">
+        <p class="act__outro">{text.outro}</p>
+        <a class="cta" href="#kontakt" data-artist={world}>{text.cta}</a>
+        {link && <a class="link" href={link.url} rel="noopener" target="_blank">{text.social} <span aria-hidden="true">↗</span></a>}
+      </div>
+    </div>
+
+    <div class="act__hud" aria-hidden="true">
+      <span class="act__count"><span data-count>01</span> / {String(items.length).padStart(2, '0')}</span>
+      <span class="act__current" data-current>{items[0]?.caption}</span>
+    </div>
+  </div>
+</section>

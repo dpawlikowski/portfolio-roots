@@ -1,0 +1,44 @@
+{
+  "schema": "brand-identity/brief@1",
+  "brand": "Roots Tattoo",
+  "tagline": "Jedne korzenie. Dwa światy.",
+  "site": null,
+  "languages": [
+    "pl"
+  ],
+  "doc_lang": "pl",
+  "numbers": false,
+  "components": {
+    "logo": "new",
+    "type": "new",
+    "palette": "new"
+  },
+  "sources": {},
+  "sets": 3,
+  "sector": "studio tatuażu, Łódź",
+  "audience": "osoby 18–35 z Łodzi szukające artysty po stylu: realizm black & grey albo kolorowy realizm pop",
+  "attributes": [
+    "mroczny",
+    "soczysty",
+    "rzemieślniczy"
+  ],
+  "competitors": [
+    "https://sigil.art.pl",
+    "https://www.he3tatuazyk.pl",
+    "I Hate Tattoo Łódź",
+    "Inne Tatuaże Łódź"
+  ],
+  "axes": [],
+  "copy": {
+    "sentence": {
+      "pl": "Styx tatuuje w czerni i szarości, Wkrenta w pełnym kolorze. Zażółć gęślą jaźń."
+    },
+    "nav": [
+      "Styx",
+      "Wkrenta",
+      "Opinie",
+      "Kontakt"
+    ],
+    "cta": "Umów się"
+  }
+}

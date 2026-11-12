@@ -1,0 +1,19 @@
+---
+import logo from '../generated/logo.json';
+interface Props {
+  kind?: 'wordmark' | 'mark';
+  class?: string;
+  title?: string;
+}
+const { kind = 'wordmark', class: className, title } = Astro.props;
+const data = logo[kind];
+---
+<svg
+  class={className}
+  viewBox={data.viewBox}
+  role={title ? 'img' : undefined}
+  aria-label={title}
+  aria-hidden={title ? undefined : 'true'}
+  focusable="false"
+  set:html={data.inner}
+/>

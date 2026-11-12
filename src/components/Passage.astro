@@ -1,0 +1,12 @@
+---
+import { copy } from '../lib/content';
+const [crossing, colour] = copy.passage;
+---
+<!-- Transition: black dissolves into neon as you scroll. WebGL canvas is added after LCP; CSS is the fallback. -->
+<section class="passage" id="przeprawa" aria-label="Przejście od czerni do koloru">
+  <div class="passage__stage">
+    <div class="passage__fallback" aria-hidden="true"></div>
+    <p class="passage__line passage__line--dark">{crossing}</p>
+    <p class="passage__line passage__line--light">{colour}</p>
+  </div>
+</section>

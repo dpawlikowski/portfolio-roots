@@ -1,0 +1,47 @@
+/* ---------- The crossing: cold dissolves into neon ---------- */
+.passage {
+  position: relative;
+  background: var(--ink);
+  --p: 0.5; /* without JS: half-way, both lines visible */
+}
+.passage__stage {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 4vh;
+  padding: var(--nav-h) var(--gutter);
+  overflow: hidden;
+  background: linear-gradient(to bottom, var(--ink), var(--night));
+}
+html.fx-ready .passage { height: 200svh; }
+html.fx-ready .passage__stage { position: sticky; top: 0; height: 100svh; background: var(--ink); }
+
+/* CSS fallback for the shader: neon light growing out from the centre with --p */
+.passage__fallback {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(40% 50% at 65% 60%, rgb(255 46 147 / 0.55), transparent 70%),
+    radial-gradient(45% 45% at 35% 40%, rgb(123 44 245 / 0.55), transparent 70%),
+    var(--night);
+  -webkit-mask-image: radial-gradient(circle at 50% 55%, #000 calc(var(--p) * 120% - 30%), transparent calc(var(--p) * 120%));
+  mask-image: radial-gradient(circle at 50% 55%, #000 calc(var(--p) * 120% - 30%), transparent calc(var(--p) * 120%));
+}
+.passage canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.passage.has-gl .passage__fallback { display: none; }
+
+.passage__line {
+  position: relative;
+  z-index: 1;
+  max-width: 16ch;
+  text-align: center;
+  font: 400 var(--t-passage)/0.95 var(--f-serif);
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 30px rgb(0 0 0 / 0.45);
+}
+.passage__line--dark { color: var(--bone); }
+.passage__line--light { color: var(--lilac); font-style: italic; }
+html.fx-ready .passage__line { position: absolute; }
+html.fx-ready .passage__line--dark { opacity: clamp(0, (0.48 - var(--p)) * 6, 1); transform: translateY(calc(var(--p) * -40px)); }
+html.fx-ready .passage__line--light { opacity: clamp(0, (var(--p) - 0.52) * 6, 1); transform: translateY(calc((1 - var(--p)) * 40px)); }
