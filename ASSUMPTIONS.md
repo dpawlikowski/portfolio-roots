@@ -15,7 +15,7 @@ Stan na 12.11.2026. Wszystko da się zmienić w `content/` albo w jednym pliku s
 2. E-mail studia.
 3. ID formularza Formspree. **Załączniki wymagają płatnego planu Formspree** (albo innego backendu z obsługą plików). Bez tego pole plików zostaje, ale pliki trzeba wysłać w wiadomości na Instagramie.
 4. Czas odpowiedzi („w ciągu 24 h”) i polityka wieku („tylko osoby pełnoletnie”).
-5. Zdjęcia prac (8 na artystę, 4:5) w miejsce płytek zastępczych, z prawdziwymi podpisami.
+5. Zdjęcia prac (8 na artystę, 4:5) w miejsce płytek zastępczych, z prawdziwymi podpisami, oraz zdjęcia profilowe Styxa i Wkrenty (kwadrat, twarz na środku).
 6. Prawdziwe opinie z Google, ze źródłem i za zgodą autorów.
 7. Docelowa domena (`site.url`).
 

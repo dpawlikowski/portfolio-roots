@@ -44,6 +44,29 @@ for (const world of ['styx', 'wkrenta']) {
 }
 console.log('tiles: placeholder works ready');
 
+// ---------- placeholder portraits (square, shown in a circle; a neutral silhouette, never a likeness) ----------
+const ARTISTS = 'src/assets/artists';
+await mkdir(ARTISTS, { recursive: true });
+const studioData = JSON.parse(await readFile('content/studio.json', 'utf8'));
+for (const world of ['styx', 'wkrenta']) {
+  const photo = studioData.artists[world].photo;
+  const out = `${ARTISTS}/${photo.src.replace(/^.*\//, '')}`;
+  if (existsSync(out) && !force) continue;
+  const S = 800;
+  const isStyx = world === 'styx';
+  const id = `p${world}`;
+  const ground = isStyx ? '#141211' : '#170828';
+  const ink = isStyx ? '#3A3633' : '#3B2152';
+  const defs = grainDefs(`${id}g`, 11) + vignetteDefs(`${id}v`) + lightDefs(`${id}l`, isStyx ? C.bone : C.pink, isStyx ? 0.16 : 0.24);
+  const body = `<rect width="${S}" height="${S}" fill="${ground}"/>
+    ${light(`${id}l`, S * 0.62, S * 0.3, S * 0.9)}
+    <circle cx="400" cy="318" r="122" fill="${ink}"/>
+    <path d="M140 820 L150 760 C150 560 250 480 400 480 C550 480 650 560 650 760 L660 820 Z" fill="${ink}"/>
+    ${vignette(`${id}v`, S, S)}${grain(`${id}g`, S, S, 0.07)}`;
+  await sharp(Buffer.from(doc(S, S, body, defs))).jpeg({ quality: 86, mozjpeg: true }).toFile(out);
+}
+console.log('portraits: placeholder artist photos ready');
+
 // ---------- logo pieces ----------
 async function logo(file, recolor = {}) {
   let svg = await readFile(`${KIT}/${file}`, 'utf8');

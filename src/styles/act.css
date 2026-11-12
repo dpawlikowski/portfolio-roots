@@ -38,7 +38,7 @@ html.fx-ready .act[data-pinned] .act__track { overflow: visible; scroll-snap-typ
 
 .panel { flex: 0 0 auto; scroll-snap-align: start; }
 .panel--intro {
-  width: min(88vw, 34rem);
+  width: min(88vw, 40rem);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -57,7 +57,67 @@ html.fx-ready .act[data-pinned] .act__track { overflow: visible; scroll-snap-typ
   border-radius: 50%;
   background: var(--blood);
 }
-.act__name--wkrenta { width: clamp(220px, 30vw, 460px); height: auto; color: var(--pink); }
+.act__name--wkrenta { width: clamp(190px, 26vw, 400px); height: auto; color: var(--pink); }
+
+/* Name + portrait: the portrait is the third "eye" of the logo's OO, one per artist. */
+.act__head {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(14px, 2.4vw, 36px);
+  max-width: 100%;
+}
+.portrait {
+  --pw: clamp(84px, 3.5rem + 7vw, 210px);
+  --ring: rgb(239 234 227 / 0.28);
+  position: relative;
+  flex: none;
+  width: var(--pw);
+  aspect-ratio: 1;
+  margin: 0 0 0.12em;
+}
+.portrait--wkrenta { --ring: rgb(255 46 147 / 0.55); --dot: var(--pink); margin-bottom: 0.4em; }
+/* Iris ring, slightly off-centre like an eye looking up and right. */
+.portrait::before {
+  content: '';
+  position: absolute;
+  inset: -7%;
+  border: 1px solid var(--ring);
+  border-radius: 50%;
+  transform: translate(3%, -3%);
+  pointer-events: none;
+}
+/* The pupil highlight in Wkrenta's pink; Styx already carries his blood dot after the name. */
+.portrait--wkrenta::after {
+  content: '';
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 13%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--dot);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.portrait__frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--bg-2);
+}
+.portrait__frame picture, .portrait__img { display: block; width: 100%; height: 100%; }
+.portrait__img {
+  object-fit: cover;
+  transition: transform var(--dur-2) var(--ease-out), filter var(--dur-2) var(--ease-out);
+}
+/* Styx stays in black & grey until you look closer; Wkrenta is always in colour. */
+.portrait--styx .portrait__img { filter: grayscale(1) contrast(1.06); }
+@media (hover: hover) {
+  .portrait__frame:hover .portrait__img { transform: scale(1.05); }
+  .portrait--styx .portrait__frame:hover .portrait__img { filter: grayscale(0.6) contrast(1.06); }
+}
+.portrait__badge { position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); white-space: nowrap; }
 .act__title {
   font: 400 var(--t-h3)/1.08 var(--f-serif);
   max-width: 18ch;

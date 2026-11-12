@@ -81,6 +81,11 @@
       "isPlaceholder": false,
       "name": "Styx",
       "genitive": "Styxa",
+      "photo": {
+        "isPlaceholder": true,
+        "src": "/artists/styx.jpg",
+        "alt": "Miejsce na zdjęcie profilowe Styxa."
+      },
       "styles": [
         "realizm",
         "black & grey",
@@ -93,6 +98,11 @@
       "isPlaceholder": false,
       "name": "Wkrenta",
       "genitive": "Wkrenty",
+      "photo": {
+        "isPlaceholder": true,
+        "src": "/artists/wkrenta.jpg",
+        "alt": "Miejsce na zdjęcie profilowe Wkrenty."
+      },
       "styles": [
         "kolorowy realizm",
         "pop",

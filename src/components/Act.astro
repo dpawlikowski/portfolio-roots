@@ -1,6 +1,8 @@
 ---
+import { Picture } from 'astro:assets';
 import Work from './Work.astro';
-import { copy, fill, works, studio, profile, type World } from '../lib/content';
+import { artistImage } from '../lib/images';
+import { copy, fill, works, studio, profile, showPlaceholders, type World } from '../lib/content';
 import words from '../generated/words.json';
 
 interface Props {
@@ -40,11 +42,30 @@ const eyes = [
     <div class="act__track" data-track>
       <div class="panel panel--intro">
         <p class="label">{text.label}</p>
-        {world === 'styx' ? (
-          <p class="act__name act__name--styx" aria-hidden="true">Styx<span class="act__dot"></span></p>
-        ) : (
-          <svg class="act__name act__name--wkrenta" viewBox={words.wkrenta.viewBox} aria-hidden="true" focusable="false"><path d={words.wkrenta.d} fill="currentColor"></path></svg>
-        )}
+        <div class="act__head">
+          {world === 'styx' ? (
+            <p class="act__name act__name--styx" aria-hidden="true">Styx<span class="act__dot"></span></p>
+          ) : (
+            <svg class="act__name act__name--wkrenta" viewBox={words.wkrenta.viewBox} aria-hidden="true" focusable="false"><path d={words.wkrenta.d} fill="currentColor"></path></svg>
+          )}
+          <figure class:list={['portrait', `portrait--${world}`]}>
+            <span class="portrait__frame">
+              <Picture
+                class="portrait__img"
+                src={artistImage(artist.photo.src)}
+                alt={artist.photo.alt}
+                formats={['avif', 'webp']}
+                fallbackFormat="jpg"
+                widths={[160, 240, 360, 480]}
+                sizes="(min-width: 768px) 210px, 92px"
+                loading="lazy"
+                decoding="async"
+                quality={72}
+              />
+            </span>
+            {showPlaceholders && artist.photo.isPlaceholder && <span class="badge portrait__badge">przykład</span>}
+          </figure>
+        </div>
         <h2 class="act__title" id={titleId}>{fill(text.h2)}</h2>
         <p class="act__text">{fill(text.text)}</p>
         <ul class="act__tags" aria-label="Style">

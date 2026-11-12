@@ -48,9 +48,11 @@ Treść edytuje się w przeglądarce na **https://app.pagescms.org**, bez instal
 | Teksty strony | Nagłówki, opisy artystów, kontakt, formularz, pytania i odpowiedzi |
 | Galerie prac | Zdjęcia prac Styxa i Wkrenty, tytuły, miejsce na ciele, styl, opis zdjęcia; kolejność na liście = kolejność w galerii |
 | Opinie | Ocena z Google, opinie klientów, inne źródła ocen |
-| Dane studia | Adres, godziny, telefon, e-mail, profile, Formspree, czas odpowiedzi, domena |
+| Dane studia | Zdjęcia profilowe Styxa i Wkrenty (*Artyści → Styx/Wkrenta → Zdjęcie profilowe*), adres, godziny, telefon, e-mail, profile, Formspree, czas odpowiedzi, domena |
 
 **Dodanie pracy:** *Galerie prac → Prace Styxa (albo Wkrenty) → Add an entry*. Wgraj zdjęcie (JPG, PNG albo WebP, pion 4:5, min. 1600 × 2000 px) i wpisz unikalny identyfikator, np. `styx-09`. Uzupełnij podpisy i odznacz „Treść zastępcza”. Zdjęcie trafia do `src/assets/works/`, a stronę w AVIF/WebP i rozmyty podgląd buduje się sam.
+
+**Zdjęcie profilowe:** kwadrat, min. 600 × 600 px, twarz na środku (strona przycina je do koła). U Styxa wyświetla się w czerni i bieli, u Wkrenty w kolorze.
 
 **Zasady:**
 - Pole „Treść zastępcza (przykład)” zaznaczone = przykład. Odznacz je po wpisaniu prawdziwej treści, bo wersja produkcyjna nie zbuduje się, dopóki zostaną przykłady.

@@ -15,6 +15,18 @@ export function workImage(src: string): ImageMetadata {
   return hit.default;
 }
 
+const portraits = import.meta.glob<{ default: ImageMetadata }>('/src/assets/artists/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
+  eager: true,
+});
+
+/** Artist portrait from content/studio.json (`artists.<id>.photo.src`, "/artists/<file>"). */
+export function artistImage(src: string): ImageMetadata {
+  const file = workFile(src);
+  const hit = portraits[`/src/assets/artists/${file}`];
+  if (!hit) throw new Error(`Missing artist photo src/assets/artists/${file} (see content/studio.json)`);
+  return hit.default;
+}
+
 export function workPreview(src: string): { color: string; src: string } {
   const entry = (lqip as Record<string, { color: string; src: string }>)[workFile(src)];
   return entry ?? { color: 'transparent', src: '' };
