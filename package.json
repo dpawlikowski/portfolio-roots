@@ -12,10 +12,12 @@
     "build": "node scripts/check-placeholders.mjs && node scripts/lqip.mjs && astro build",
     "build:preview": "node scripts/lqip.mjs && cross-env ALLOW_PLACEHOLDERS=1 astro build",
     "preview": "astro preview --port 4321",
-    "check": "astro check",
+    "check": "node scripts/gen-cms.mjs --check && astro check",
     "check:placeholders": "node scripts/check-placeholders.mjs",
     "check:contrast": "node scripts/contrast.mjs",
-    "brand": "node scripts/gen-brand.mjs"
+    "brand": "node scripts/gen-brand.mjs",
+    "cms": "node scripts/gen-cms.mjs",
+    "check:cms": "node scripts/gen-cms.mjs --check"
   },
   "dependencies": {
     "astro": "^7.4.11",

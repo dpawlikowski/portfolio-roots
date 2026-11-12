@@ -26,17 +26,46 @@ npm run build:preview  # build z placeholderami (oznaczone „przykład”, noin
 npm run build          # build produkcyjny: przerywa się, dopóki są placeholdery
 npm run preview        # podgląd zbudowanej strony
 npm run check:contrast # kontrast par kolorów (WCAG AA)
+npm run cms            # odtwarza konfigurację panelu .pages.yml z content/*.json
 ```
 
 Wymagany Node 22+. Na Windowsie w Git Bash ustaw `MSYS_NO_PATHCONV=1`, jeśli podajesz `BASE_PATH`.
 
+## Panel do edycji treści (Pages CMS)
+
+Treść edytuje się w przeglądarce na **https://app.pagescms.org**, bez instalowania czegokolwiek. Pages CMS to darmowy panel open source: zapisuje zmiany jako commity w tym repozytorium, a GitHub Actions publikuje stronę po 1–2 minutach.
+
+**Pierwsze uruchomienie (raz):**
+1. Wejdź na https://app.pagescms.org i zaloguj się kontem GitHub.
+2. Zainstaluj aplikację Pages CMS na koncie z repozytorium i daj jej dostęp tylko do `portfolio-roots`.
+3. Otwórz repozytorium `portfolio-roots`, gałąź `main`.
+4. Żeby dać dostęp komuś ze studia: dodaj tę osobę jako współpracownika repozytorium na GitHubie albo zaproś ją w panelu jako współpracownika (*collaborator*) przez e-mail. Taka osoba edytuje treści i zdjęcia bez konta GitHub, ale nie zmienia konfiguracji panelu.
+
+**Co jest w panelu:**
+
+| Sekcja | Co zmienisz |
+|---|---|
+| Teksty strony | Nagłówki, opisy artystów, kontakt, formularz, pytania i odpowiedzi |
+| Galerie prac | Zdjęcia prac Styxa i Wkrenty, tytuły, miejsce na ciele, styl, opis zdjęcia; kolejność na liście = kolejność w galerii |
+| Opinie | Ocena z Google, opinie klientów, inne źródła ocen |
+| Dane studia | Adres, godziny, telefon, e-mail, profile, Formspree, czas odpowiedzi, domena |
+
+**Dodanie pracy:** *Galerie prac → Prace Styxa (albo Wkrenty) → Add an entry*. Wgraj zdjęcie (JPG, PNG albo WebP, pion 4:5, min. 1600 × 2000 px) i wpisz unikalny identyfikator, np. `styx-09`. Uzupełnij podpisy i odznacz „Treść zastępcza”. Zdjęcie trafia do `src/assets/works/`, a stronę w AVIF/WebP i rozmyty podgląd buduje się sam.
+
+**Zasady:**
+- Pole „Treść zastępcza (przykład)” zaznaczone = przykład. Odznacz je po wpisaniu prawdziwej treści, bo wersja produkcyjna nie zbuduje się, dopóki zostaną przykłady.
+- Znaczniki `{{MIASTO}}`, `{{STYX}}` itd. w tekstach zostaw: strona wstawia za nie dane studia.
+- Po zapisie postęp publikacji widać w zakładce **Actions** repozytorium. Jeśli build się nie uda, online zostaje poprzednia wersja strony.
+
+**Dla dewelopera:** konfigurację panelu, plik `.pages.yml`, generuje `npm run cms` z kształtu plików `content/*.json`, więc każde pole w JSON ma swoje pole w panelu. Po dodaniu albo usunięciu klucza w `content/` uruchom `npm run cms`. `npm run check` przypomni o tym, jeśli konfiguracja jest nieaktualna.
+
 ## Podmiana treści w 10 minut
 
-Cała treść jest w `content/`. Kod nie wymaga zmian.
+Cała treść jest w `content/`. Kod nie wymaga zmian. Najprościej zrobić to w panelu (sekcja wyżej), a poniżej jest to samo w plikach.
 
 1. **Dane studia:** `content/studio.json` (adres, godziny, telefon, e-mail, profile, Formspree, czas odpowiedzi, polityka wieku, adres strony).
 2. **Teksty:** `content/copy.json`. Tokeny `{{STYX}}`, `{{MIASTO_MSC}}` itd. wypełniają się z `studio.json`. Zasady głosu są w `brand/STORY.md`.
-3. **Prace:** wrzuć zdjęcia 4:5 (min. 1600 × 2000 px) do `src/assets/works/` pod nazwami z `content/works.json`, popraw podpis, miejsce, styl i opis alternatywny (`alt`), ustaw `isPlaceholder: false`. Podgląd rozmycia (LQIP) generuje się sam przy `dev` i `build`.
+3. **Prace:** wrzuć zdjęcia 4:5 (min. 1600 × 2000 px) do `src/assets/works/` i wpisz je w `content/works.json` jako `"src": "/works/nazwa-pliku.jpg"`, popraw podpis, miejsce, styl i opis alternatywny (`alt`), ustaw `isPlaceholder: false`. Podgląd rozmycia (LQIP) generuje się sam przy `dev` i `build`.
 4. **Opinie:** `content/reviews.json`. Tylko prawdziwe opinie, ze źródłem i za zgodą autora. Ocena i liczba opinii z Google są w `rating`.
 5. **Kolory:** `src/styles/tokens.css` (role `--ink`, `--bone`, `--pink`…). Po zmianie uruchom `npm run check:contrast`.
 6. **Dźwięk:** `src/scripts/audio.ts` (częstotliwości drona, nuty pozytywki, głośność). Dźwięk jest domyślnie wyłączony.

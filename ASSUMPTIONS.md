@@ -42,3 +42,4 @@ Stan na 12.11.2026. Wszystko da się zmienić w `content/` albo w jednym pliku s
 - TBT w Lighthouse mobile to 230 ms (cel z briefu < 100 ms); wynik wydajności 96.
 - Brak testów Playwright, axe w CI i nagrań przewijania: nie zostały jeszcze napisane.
 - Strona była sprawdzana w Chrome (desktop i emulacja telefonu 375 px). Safari i fizyczne urządzenia nie zostały przetestowane.
+- Panel treści to hostowany Pages CMS (app.pagescms.org, open source). Dostaje dostęp do repozytorium przez aplikację GitHub. Konfiguracja (`.pages.yml`) jest sprawdzona lokalnie: każdy klucz z `content/*.json` ma pole, a build przechodzi. Zapis z panelu nie był jeszcze testowany na żywo, bo wymaga zalogowania właściciela repozytorium. Panel może zmienić wcięcia i kolejność kluczy w plikach JSON, co nie wpływa na stronę.

@@ -23,7 +23,7 @@ const W = 1600;
 const H = 2000;
 for (const world of ['styx', 'wkrenta']) {
   for (const [i, work] of works[world].entries()) {
-    const out = `${WORKS}/${work.src}`;
+    const out = `${WORKS}/${work.src.replace(/^.*\//, '')}`;
     if (existsSync(out) && !force) continue;
     const id = `${world}${i}`;
     const isStyx = world === 'styx';
